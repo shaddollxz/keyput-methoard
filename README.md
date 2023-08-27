@@ -1,10 +1,10 @@
 # 我的自定义键盘
 
-通过 [AHK](https://www.autohotkey.com)实现的自定义键盘，当前支持移动光标，快速输入符号
+通过 [AHK](https://www.autohotkey.com) 实现的自定义键盘，灵感来源于[myKeyMap](https://github.com/xianyukang/MyKeymap)，根据自己的需求重写的一套脚本，当前支持移动光标，快速输入符号
 
 ## 使用
 
-下载 `autohotkey` ，双击加载[脚本]("/src/main.ahk")，或者编译为 exe 文件使用
+下载 `autohotkey` ，双击加载[脚本]("/src/main.ahk")，或者编译为 exe 文件使用（推荐）
 
 ## 说明
 

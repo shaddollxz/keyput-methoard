@@ -8,7 +8,7 @@ modeData_9 := useMode("9")
     modeData_9.openMode()
 }
 
-; 9模式下的映射
+; 对应模式下的映射
 #HotIf (modeData_9.isOpenMode)
 *w:: {
     Send(cursorMoveKeyMap.up)

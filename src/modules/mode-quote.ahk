@@ -7,7 +7,7 @@ modeData_quote := useMode("'")
     modeData_quote.openMode()
 }
 
-; 9模式下的映射
+; 对应模式下的映射
 #HotIf (modeData_quote.isOpenMode)
 *w:: {
     Send("{}}")

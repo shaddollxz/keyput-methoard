@@ -7,7 +7,7 @@ modeData_semi := useMode(";")
     modeData_semi.openMode()
 }
 
-; 9模式下的映射
+; 对应模式下的映射
 #HotIf (modeData_semi.isOpenMode)
 *q:: {
     Send("{bluding}{Esc}")
