@@ -1,10 +1,11 @@
-# 我的自定义键盘
+# keyput-methoard -- 我的自定义键入法
 
 通过 [AHK](https://www.autohotkey.com) 实现的自定义键盘，灵感来源于[myKeyMap](https://github.com/xianyukang/MyKeymap)，根据自己的需求重写的一套脚本，当前支持移动光标，快速输入符号
 
 ## 使用
 
-下载 `autohotkey` ，双击加载[脚本]("/src/main.ahk")，或者编译为 exe 文件使用（推荐）
+在 release 中选择对应版本的 exe 文件下载
+或者克隆代码，在本地使用 `powershell` 在 `build` 目录中运行脚本 `build.ps1` 进行编译
 
 ## 说明
 
