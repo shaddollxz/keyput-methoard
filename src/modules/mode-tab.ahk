@@ -23,7 +23,7 @@ modeData_tab := useMode("Tab", keyMap.onlyTab)
     Send(keyMap.ctrl . keyMap.shift . "i")
 }
 
-; 浏览器或者 vscode 中，切换标签
+; 浏览器或者代码编辑器中，切换标签页
 ; 双手时
 ; 向左
 *2::
@@ -50,6 +50,12 @@ modeData_tab := useMode("Tab", keyMap.onlyTab)
         case "dn":
             Send(keyMap.ctrl . keyMap.onlyPageDown)
     }
+}
+
+; 关闭标签页
+*r::
+*p:: {
+    Send(keyMap.ctrl . "w")
 }
 
 ; todo 切换窗口
