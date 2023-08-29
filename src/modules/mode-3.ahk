@@ -1,4 +1,4 @@
-#Include "../configs/key-maps/specialKeyMap.ahk"
+#Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 
 modeData_3 := useMode("3")
@@ -54,12 +54,12 @@ modeData_3 := useMode("3")
 }
 
 *r:: {
-    Send(specialKeyMap.delete)
+    Send(keyMap.delete)
 }
 *q:: {
-    Send(specialKeyMap.backspace)
+    Send(keyMap.backspace)
 }
 *1:: {
-    Send(specialKeyMap.backspace)
+    Send(keyMap.backspace)
 }
 #HotIf

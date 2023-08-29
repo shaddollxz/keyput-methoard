@@ -1,5 +1,4 @@
-#Include "../configs/key-maps/cursorMoveKeyMap.ahk"
-#Include "../configs/key-maps/specialKeyMap.ahk"
+#Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 
 modeData_9 := useMode("9")
@@ -11,33 +10,33 @@ modeData_9 := useMode("9")
 ; 对应模式下的映射
 #HotIf (modeData_9.isOpenMode)
 *w:: {
-    Send(cursorMoveKeyMap.up)
+    Send(keyMap.up)
 }
 *s:: {
-    Send(cursorMoveKeyMap.down)
+    Send(keyMap.down)
 }
 *a:: {
-    Send(cursorMoveKeyMap.left)
+    Send(keyMap.left)
 }
 *f:: {
-    Send(cursorMoveKeyMap.right)
+    Send(keyMap.right)
 }
 *g:: {
-    Send(cursorMoveKeyMap.end)
+    Send(keyMap.end)
 }
 *q:: {
-    Send(cursorMoveKeyMap.home)
+    Send(keyMap.home)
 }
 *e:: {
-    Send(cursorMoveKeyMap.previousWord)
+    Send(keyMap.previousWord)
 }
 *d:: {
-    Send(cursorMoveKeyMap.nextWord)
+    Send(keyMap.nextWord)
 }
 *u:: {
-    Send(specialKeyMap.backspace)
+    Send(keyMap.backspace)
 }
 *p:: {
-    Send(specialKeyMap.delete)
+    Send(keyMap.delete)
 }
 #HotIf
