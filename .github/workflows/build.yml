@@ -5,8 +5,8 @@ on:
     types: [published]
 
 jobs:
-  build:
-    name: build-and-release
+  build-win:
+    name: build-and-release-win
     runs-on: windows-latest
 
     steps:
@@ -18,10 +18,27 @@ jobs:
         run: Invoke-Expression "$(pwd)/win/build/ahk2exe.exe /in $(pwd)/win/main.ahk /out $(pwd)/Keyput-Methoard.exe /icon $(pwd)/win/build/icon.ico /base $(pwd)/win/build/autohotkey64.exe"
 
       - name: release
-        id: create_release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: Keyput-Methoard.exe
+          token: ${{ secrets.GITHUB_TOKEN }}
+  build-mac:
+    name: build-and-release-mac
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: build
+        run: sh mac/build.sh
+
+      - name: release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: mac/karabiner.edn
           token: ${{ secrets.GITHUB_TOKEN }}
