@@ -15,7 +15,7 @@ jobs:
 
       - name: build
         shell: pwsh
-        run: Invoke-Expression "$(pwd)/build/ahk2exe.exe /in $(pwd)/src/main.ahk /out $(pwd)/Keyput-Methoard-${{ github.event.release.tag_name }}.exe /icon $(pwd)/build/icon.ico /base $(pwd)/build/autohotkey64.exe"
+        run: Invoke-Expression "$(pwd)/win/build/ahk2exe.exe /in $(pwd)/win/main.ahk /out $(pwd)/Keyput-Methoard.exe /icon $(pwd)/win/build/icon.ico /base $(pwd)/win/build/autohotkey64.exe"
 
       - name: release
         id: create_release
@@ -23,5 +23,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: Keyput-Methoard-${{ github.event.release.tag_name }}.exe
+          files: Keyput-Methoard.exe
           token: ${{ secrets.GITHUB_TOKEN }}
