@@ -7,6 +7,7 @@
 5. 控制台直接使用 `goku` 命令
 
 [主页](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
+
 [详细配置文档](https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md)
 
 ## 其他键位映射
