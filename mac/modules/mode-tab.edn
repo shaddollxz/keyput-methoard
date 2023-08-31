@@ -14,10 +14,10 @@
          [:e :!COright_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + right
          ;; 双手模式
          [:p :!Cw ["tab_mode" 1]]
-         [:i :!Tleft_arrow ["tab_mode" 1]]
-         [:k :!Tright_arrow ["tab_mode" 1]]
-         [:j :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
-         [:l :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
-         [:j :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
-         [:l :!COright_arrow [:vscode ["tab_mode" 1]]]];; cmd + option + right
+         [:j :!Tleft_arrow ["tab_mode" 1]]
+         [:l :!Tright_arrow ["tab_mode" 1]]
+         [:i :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
+         [:k :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
+         [:i :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
+         [:k :!COright_arrow [:vscode ["tab_mode" 1]]]];; cmd + option + right
         }
