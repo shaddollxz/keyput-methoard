@@ -26,7 +26,7 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 ; 浏览器或者代码编辑器中，切换标签页
 ; 向左
-*2::
+*e::
 *i:: {
     changeType := getChangeTabType()
 
@@ -39,7 +39,7 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
     }
 }
 ; 向右
-*e::
+*f::
 *k:: {
     changeType := getChangeTabType()
 
@@ -58,7 +58,7 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 }
 
 ; 刷新浏览器
-*r:: {
+*c:: {
     if (isBrowser()) {
         Send("F5")
     }
@@ -66,23 +66,19 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 ; todo 切换窗口
 ; 向左
-; *1::
 ; *j:: {
 ; }
 ; 向右
-; *r::
 ; *l:: {
 ; }
 
 ; 切换桌面
 ; 向左
-*s::
-*h:: {
+*s:: {
     Send("{LControl down}{LWin down}{Left}{LWin up}{LControl up}")
 }
 ; 向右
-*d::
-*`;:: {
+*d:: {
     Send("{LControl down}{LWin down}{Right}{LWin up}{LControl up}")
 }
 #HotIf
