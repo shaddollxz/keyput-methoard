@@ -1,0 +1,22 @@
+{:des "9模式"
+ :rules [[:9 ["nine_mode" 1] nil {:afterup ["nine_mode" 0]
+                                  :alone :9}]
+         [:w :up_arrow ["nine_mode" 1]] ;; 上
+         [:s :down_arrow ["nine_mode" 1]] ;; 下
+         [:a :left_arrow ["nine_mode" 1]] ;; 左
+         [:f :right_arrow ["nine_mode" 1]] ;; 右
+         [:g :!Qright_arrow ["nine_mode" 1]] ;; end
+         [:q :!Qleft_arrow ["nine_mode" 1]] ;; home
+         [:e :!Eleft_arrow ["nine_mode" 1]] ;; 上一个单词
+         [:d :!Eright_arrow ["nine_mode" 1]] ;; 下一个单词
+         [:u :delete_or_backspace ["nine_mode" 1]] ;; backspace
+         [:p :!Fdelete_or_backspace ["nine_mode" 1]] ;; delete
+         [:!Sw :!Sup_arrow ["nine_mode" 1]] ;; 上+shift
+         [:!Ss :!Sdown_arrow ["nine_mode" 1]] ;; 下+shift
+         [:!Sa :!Sleft_arrow ["nine_mode" 1]] ;; 左+shift
+         [:!Sf :!Sright_arrow ["nine_mode" 1]] ;; 右+shift
+         [:!Sg :!SQright_arrow ["nine_mode" 1]] ;; end+shift
+         [:!Sq :!SQleft_arrow ["nine_mode" 1]] ;; home+shift
+         [:!Se :!SEleft_arrow ["nine_mode" 1]] ;; 上一个单词+shift
+         [:!Sd :!SEright_arrow ["nine_mode" 1]] ;; 下一个单词+shift
+         ]}

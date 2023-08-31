@@ -1,0 +1,17 @@
+;; 这里的配置每个模块都通用（因为最后都会被集成为一个文件）
+;; 通过 osascript -e 'id of app "AppName"' 命令获得 app 的标识
+{:applications {:firefox ["^org\\.mozilla\\.firefox$"]
+                :chrome ["^com\\.google\\.Chrome$"]
+                :edge ["^com\\.microsoft\\.edgemac$"]
+                :vscode ["^com\\.microsoft\\.VSCode$"]}
+ :main [
+        ;; 每个模块单独一行才能被脚本解析到
+        "./modules/mode-semi.edn"
+        "./modules/mode-quote.edn"
+        "./modules/mode-3.edn"
+        "./modules/mode-9.edn"
+        "./modules/mode-caps.edn"
+        "./modules/mode-tab.edn"
+        "./modules/mode-fn.edn"
+        ]
+ }

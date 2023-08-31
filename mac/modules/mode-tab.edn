@@ -1,0 +1,23 @@
+;; 只有 vscode 的标签页切换和浏览器的不同
+{:des "tab模式"
+ :rules [[:tab ["tab_mode" 1] nil {:afterup ["tab_mode" 0]
+                                   :alone :tab}]
+         [:q :!Cw ["tab_mode" 1]] ;; 关闭当前标签页
+         [:r :f5 [:firefox :chrome :edge ["tab_mode" 1]]] ;; 刷新浏览器页面
+         ;; 桌面左右移动
+         [:d :!Tright_arrow ["tab_mode" 1]]
+         [:s :!Tleft_arrow ["tab_mode" 1]]
+         ;; 标签页切换
+         [:2 :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
+         [:e :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
+         [:2 :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
+         [:e :!COright_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + right
+         ;; 双手模式
+         [:p :!Cw ["tab_mode" 1]]
+         [:i :!Tleft_arrow ["tab_mode" 1]]
+         [:k :!Tright_arrow ["tab_mode" 1]]
+         [:j :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
+         [:l :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
+         [:j :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
+         [:l :!COright_arrow [:vscode ["tab_mode" 1]]]];; cmd + option + right
+        }

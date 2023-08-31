@@ -1,0 +1,6 @@
+{:des "Caps模式"
+ :rules [[:caps_lock ["caps_mode" 1] nil {:afterup ["caps_mode" 0]
+                                          :alone :caps_lock}]
+         [:q :!WQf ["caps_mode" 1]] ;; 全屏
+         [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
+         ]}

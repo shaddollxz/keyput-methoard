@@ -1,0 +1,8 @@
+{:des "引号模式"
+ :rules [[:quote ["quote_mode" 1] nil {:afterup ["quote_mode" 0]
+                                       :alone :quote}]
+         [:w :!Rclose_bracket ["quote_mode" 1]] ;; }
+         [:e :!R0 ["quote_mode" 1]] ;; )
+         [:r :!Rperiod ["quote_mode" 1]] ;; >
+         [:t :!Rperiod ["quote_mode" 1]] ;; >
+         ]}

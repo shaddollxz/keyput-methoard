@@ -1,0 +1,29 @@
+{:des "分号模式"
+ :rules [[:semicolon ["semi_mode" 1] nil {:afterup ["semi_mode" 0]
+                                          :alone :semicolon}]
+         [:q :escape ["semi_mode" 1]] ;; esc
+         [:w :!Ropen_bracket ["semi_mode" 1]] ;; {
+         [:e :!R9 ["semi_mode" 1]] ;; (
+         [:r :!Rcomma ["semi_mode" 1]] ;; <
+         [:t :!Rperiod ["semi_mode" 1]] ;; >
+         [:y :!R5 ["semi_mode" 1]] ;; %
+         [:u :!R8 ["semi_mode" 1]] ;; *
+         [:i :slash ["semi_mode" 1]] ;; /
+         [:o :!Rquote ["semi_mode" 1]] ;; “
+         [:a :!R2 ["semi_mode" 1]] ;; @
+         [:s :!R7 ["semi_mode" 1]] ;; &
+         [:d :!Rbackslash ["semi_mode" 1]] ;; |
+         [:f :!R1 ["semi_mode" 1]] ;; !
+         [:g [:equal_sign :!Rperiod] ["semi_mode" 1]] ;; =>
+         [:h :equal_sign ["semi_mode" 1]] ;; =
+         [:j :!Requal_sign ["semi_mode" 1]] ;; +
+         [:k :hyphen ["semi_mode" 1]] ;; -
+         [:l :grave_accent_and_tilde ["semi_mode" 1]] ;; `
+         [:z :!R3 ["semi_mode" 1]] ;; #
+         [:x :!Rhyphen ["semi_mode" 1]] ;; _
+         [:c :!R6 ["semi_mode" 1]] ;; ^
+         [:v :!Rsemicolon ["semi_mode" 1]] ;; :
+         [:b :!R4 ["semi_mode" 1]] ;; $
+         [:n :!Rslash ["semi_mode" 1]] ;; ?
+         [:m :!Rgrave_accent_and_tilde ["semi_mode" 1]] ;; ~
+         ]}

@@ -24,4 +24,4 @@
 
 ## 在 mac 上使用
 
-`autohotkey` 只支持在`windows`系统上使用，如果需要在`mac`中设置键位，推荐使用[karabiner](https://karabiner-elements.pqrs.org/)，同时配合 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)来生成配置文件，[这里](/mac)提供了同该项目的键位配置
+`autohotkey` 只支持在`windows`系统上使用，如果需要在`mac`中设置键位，推荐使用[karabiner](https://karabiner-elements.pqrs.org/)，同时配合[goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)来生成配置文件，[这里](/mac)提供了同该项目的键位配置

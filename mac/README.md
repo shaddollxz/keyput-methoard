@@ -2,8 +2,9 @@
 
 1. 下载 [karabiner](https://karabiner-elements.pqrs.org/)
 2. 下载 goku `brew install yqrashawn/goku/goku`
-3. 复制该配置文件到 `~/.config`
-4. 控制台直接使用 `goku` 命令
+3. 命令行运行 `build` 脚本生成 `karabiner.edn`
+4. 复制 `karabiner.edn` 到 `~/.config` 下
+5. 控制台直接使用 `goku` 命令
 
 [主页](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
 [详细配置文档](https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md)
