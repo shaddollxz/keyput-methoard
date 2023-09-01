@@ -38,7 +38,7 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
     }
 }
 ; 向右
-*f::
+*d::
 *k:: {
     changeType := getChangeTabType()
 
@@ -72,7 +72,7 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
     Send("{LControl down}{LWin down}{Left}{LWin up}{LControl up}")
 }
 ; 向右
-*d:: {
+*f:: {
     Send("{LControl down}{LWin down}{Right}{LWin up}{LControl up}")
 }
 #HotIf
