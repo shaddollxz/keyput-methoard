@@ -1,7 +1,6 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/get-change-tab-type.ahk"
 #Include "../utils/use-mode.ahk"
-#Include "../utils/assert.ahk"
 
 modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 
@@ -53,15 +52,8 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 }
 
 ; 关闭标签页 另一个快捷键是 alt + q
-*p:: {
-    Send(keyMap.ctrl . "w")
-}
-
-; 刷新浏览器
 *c:: {
-    if (isBrowser()) {
-        Send("F5")
-    }
+    Send(keyMap.ctrl . "w")
 }
 
 ; todo 切换窗口
