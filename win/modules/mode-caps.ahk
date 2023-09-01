@@ -23,6 +23,11 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
     }
 }
 
+; 打开桌面控制台
+*Space:: {
+    Send(keyMap.win . keyMap.onlyTab)
+}
+
 ; 浏览器或者代码编辑器中，切换标签页
 ; 向左
 *e::
@@ -69,10 +74,10 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 切换桌面
 ; 向左
 *s:: {
-    Send("{LControl down}{LWin down}{Left}{LWin up}{LControl up}")
+    Send(keyMap.ctrl . keyMap.win . keyMap.onlyLeft)
 }
 ; 向右
 *f:: {
-    Send("{LControl down}{LWin down}{Right}{LWin up}{LControl up}")
+    Send(keyMap.ctrl . keyMap.win . keyMap.onlyRight)
 }
 #HotIf

@@ -2,6 +2,7 @@ keyMap := {
     ctrl: "^",
     alt: "!",
     shift: "+",
+    win: "#",
     Lwin: "<#",
     Rwin: ">#",
     Lctrl: "<^",
