@@ -56,13 +56,15 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
     Send(keyMap.ctrl . "w")
 }
 
-; todo 切换窗口
-; 向左
-; *j:: {
-; }
-; 向右
-; *l:: {
-; }
+; 切换应用
+; 上一个运行窗口
+*j:: {
+    Send(keyMap.alt . keyMap.shift . keyMap.onlyEsc)
+}
+; 下一个运行窗口
+*l:: {
+    Send(keyMap.alt . keyMap.onlyEsc)
+}
 
 ; 切换桌面
 ; 向左

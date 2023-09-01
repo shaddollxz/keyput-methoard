@@ -26,6 +26,7 @@ keyMap := {
     enter: "{Blind}{Enter}",
     caps: "{Blind}{CapsLock}",
     tab: "{Blind}{Tab}",
+    space: "{Space}",
     onlyUp: "{Up}",
     onlyDown: "{Down}",
     onlyLeft: "{Left}",
