@@ -3,4 +3,21 @@
                                           :alone :caps_lock}]
          [:q :!WQf ["caps_mode" 1]] ;; 全屏
          [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
-         ]}
+         [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
+         ;; 桌面左右移动
+         [:d :!Tright_arrow ["caps_mode" 1]]
+         [:s :!Tleft_arrow ["caps_mode" 1]]
+         ;; 标签页切换
+         [:e :!TStab [:!vscode ["caps_mode" 1]]] ;; control + tab
+         [:f :!Ttab [:!vscode ["caps_mode" 1]]] ;; control + shift + tab
+         [:e :!COleft_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + left
+         [:f :!COright_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + right
+         ;; 双手模式
+         [:p :!Cw ["caps_mode" 1]]
+         [:j :!Tleft_arrow ["caps_mode" 1]]
+         [:l :!Tright_arrow ["caps_mode" 1]]
+         [:i :!TStab [:!vscode ["caps_mode" 1]]] ;; control + tab
+         [:k :!Ttab [:!vscode ["caps_mode" 1]]] ;; control + shift + tab
+         [:i :!COleft_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + left
+         [:k :!COright_arrow [:vscode ["caps_mode" 1]]]];; cmd + option + right
+ }

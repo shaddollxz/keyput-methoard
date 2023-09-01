@@ -2,22 +2,50 @@
 {:des "tab模式"
  :rules [[:tab ["tab_mode" 1] nil {:afterup ["tab_mode" 0]
                                    :alone :tab}]
-         [:q :!Cw ["tab_mode" 1]] ;; 关闭当前标签页
-         [:r :f5 [:firefox :chrome :edge ["tab_mode" 1]]] ;; 刷新浏览器页面
-         ;; 桌面左右移动
-         [:d :!Tright_arrow ["tab_mode" 1]]
-         [:s :!Tleft_arrow ["tab_mode" 1]]
-         ;; 标签页切换
-         [:2 :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
-         [:e :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
-         [:2 :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
-         [:e :!COright_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + right
-         ;; 双手模式
-         [:p :!Cw ["tab_mode" 1]]
-         [:j :!Tleft_arrow ["tab_mode" 1]]
-         [:l :!Tright_arrow ["tab_mode" 1]]
-         [:i :!TStab [:!vscode ["tab_mode" 1]]] ;; control + tab
-         [:k :!Ttab [:!vscode ["tab_mode" 1]]] ;; control + shift + tab
-         [:i :!COleft_arrow [:vscode ["tab_mode" 1]]] ;; cmd + option + left
-         [:k :!COright_arrow [:vscode ["tab_mode" 1]]]];; cmd + option + right
-        }
+         [:1 :!CO1 ["tab_mode" 1]]
+         [:2 :!CO2 ["tab_mode" 1]]
+         [:3 :!CO3 ["tab_mode" 1]]
+         [:4 :!CO4 ["tab_mode" 1]]
+         [:5 :!CO5 ["tab_mode" 1]]
+         [:6 :!CO6 ["tab_mode" 1]]
+         [:7 :!CO7 ["tab_mode" 1]]
+         [:8 :!CO8 ["tab_mode" 1]]
+         [:9 :!CO9 ["tab_mode" 1]]
+         [:0 :!CO0 ["tab_mode" 1]]
+         [:hyphen :!COhyphen ["tab_mode" 1]]
+         [:equal_sign :!COequal_sign ["tab_mode" 1]]
+         [:q :!COq ["tab_mode" 1]]
+         [:w :!COw ["tab_mode" 1]]
+         [:e :!COe ["tab_mode" 1]]
+         [:r :!COr ["tab_mode" 1]]
+         [:t :!COt ["tab_mode" 1]]
+         [:y :!COy ["tab_mode" 1]]
+         [:u :!COu ["tab_mode" 1]]
+         [:i :!COi ["tab_mode" 1]]
+         [:o :!COo ["tab_mode" 1]]
+         [:p :!COp ["tab_mode" 1]]
+         [:open_bracket :!COopen_bracket ["tab_mode" 1]]
+         [:close_bracket :!COclose_bracket ["tab_mode" 1]]
+         [:backslash :!CObackslash ["tab_mode" 1]]
+         [:a :!COa ["tab_mode" 1]]
+         [:s :!COs ["tab_mode" 1]]
+         [:d :!COd ["tab_mode" 1]]
+         [:f :!COf ["tab_mode" 1]]
+         [:g :!COg ["tab_mode" 1]]
+         [:h :!COh ["tab_mode" 1]]
+         [:j :!COj ["tab_mode" 1]]
+         [:k :!COk ["tab_mode" 1]]
+         [:l :!COl ["tab_mode" 1]]
+         [:semicolon :!COsemicolon ["tab_mode" 1]]
+         [:quote :!COquote ["tab_mode" 1]]
+         [:z :!COz ["tab_mode" 1]]
+         [:x :!COx ["tab_mode" 1]]
+         [:c :!COc ["tab_mode" 1]]
+         [:v :!COv ["tab_mode" 1]]
+         [:b :!COb ["tab_mode" 1]]
+         [:n :!COn ["tab_mode" 1]]
+         [:m :!COm ["tab_mode" 1]]
+         [:comma :!COcomma ["tab_mode" 1]]
+         [:period :!COperiod ["tab_mode" 1]]
+         [:slash :!COslash ["tab_mode" 1]]
+         ]}
