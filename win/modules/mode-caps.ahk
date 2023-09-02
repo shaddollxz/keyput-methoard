@@ -1,5 +1,4 @@
 #Include "../configs/key-map.ahk"
-#Include "../utils/get-change-tab-type.ahk"
 #Include "../utils/use-mode.ahk"
 
 modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
@@ -32,28 +31,12 @@ modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 向左
 *e::
 *i:: {
-    changeType := getChangeTabType()
-
-    switch changeType {
-        case "ctrl":
-            Send(keyMap.ctrl . keyMap.shift . keyMap.onlyTab)
-
-        case "dn":
-            Send(keyMap.ctrl . keyMap.onlyPageUp)
-    }
+    Send(keyMap.ctrl . keyMap.onlyPageUp)
 }
 ; 向右
 *d::
 *k:: {
-    changeType := getChangeTabType()
-
-    switch changeType {
-        case "ctrl":
-            Send(keyMap.ctrl . keyMap.onlyTab)
-
-        case "dn":
-            Send(keyMap.ctrl . keyMap.onlyPageDown)
-    }
+    Send(keyMap.ctrl . keyMap.onlyPageDown)
 }
 
 ; 关闭标签页 另一个快捷键是 alt + q
