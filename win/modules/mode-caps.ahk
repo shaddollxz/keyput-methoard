@@ -1,13 +1,13 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 
-modeData_caps := useMode("CapsLock", keyMap.onlyCaps)
+mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 *CapsLock:: {
-    modeData_caps.openMode()
+    mode_caps.openMode()
 }
 
-#HotIf modeData_caps.isOpenMode
+#HotIf mode_caps.isOpenMode
 ; 打开浏览器开发者模式
 *w:: {
     Send(keyMap.ctrl . keyMap.shift . "i")

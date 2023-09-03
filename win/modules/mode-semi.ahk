@@ -1,14 +1,14 @@
 #Include "../utils/use-mode.ahk"
 
-modeData_semi := useMode(";")
+mode_semi := useMode(";")
 
 
 *;:: {
-    modeData_semi.openMode()
+    mode_semi.openMode()
 }
 
 ; 对应模式下的映射
-#HotIf (modeData_semi.isOpenMode)
+#HotIf (mode_semi.isOpenMode)
 *q:: {
     Send("{bluding}{Esc}")
 }

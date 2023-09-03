@@ -1,15 +1,15 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 
-modeData_3 := useMode("3")
+mode_3 := useMode("3")
 
 
 *3:: {
-    modeData_3.openMode()
+    mode_3.openMode()
 }
 
 ; 对应模式下的映射
-#HotIf (modeData_3.isOpenMode)
+#HotIf (mode_3.isOpenMode)
 *Space:: {
     Send("0")
 }

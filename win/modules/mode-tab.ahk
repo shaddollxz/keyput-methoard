@@ -5,14 +5,14 @@
 ; 很少有默认快捷键会映射到这个位置（因为难按）
 ; 用来做软件中自定义的快捷键的快速触发位置
 
-modeData_tab := useMode("Tab", keyMap.onlyTab)
+mode_tab := useMode("Tab", keyMap.onlyTab)
 
 
 *Tab:: {
-    modeData_tab.openMode()
+    mode_tab.openMode()
 }
 
-#HotIf (modeData_tab.isOpenMode)
+#HotIf (mode_tab.isOpenMode)
 *1:: {
     Send(keyMap.ctrl . keyMap.alt . "1")
 }

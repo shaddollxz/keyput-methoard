@@ -1,14 +1,14 @@
 #Include "../utils/use-mode.ahk"
 
-modeData_quote := useMode("'")
+mode_quote := useMode("'")
 
 
 *':: {
-    modeData_quote.openMode()
+    mode_quote.openMode()
 }
 
 ; 对应模式下的映射
-#HotIf (modeData_quote.isOpenMode)
+#HotIf (mode_quote.isOpenMode)
 *w:: {
     Send("{}}")
 }
