@@ -9,9 +9,9 @@
          [:s :!Tleft_arrow ["caps_mode" 1]]
          ;; 标签页切换
          [:e :!TStab [:!vscode ["caps_mode" 1]]] ;; control + tab
-         [:s :!Ttab [:!vscode ["caps_mode" 1]]] ;; control + shift + tab
+         [:d :!Ttab [:!vscode ["caps_mode" 1]]] ;; control + shift + tab
          [:e :!COleft_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + left
-         [:s :!COright_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + right
+         [:d :!COright_arrow [:vscode ["caps_mode" 1]]] ;; cmd + option + right
          ;; 双手模式
          [:p :!Cw ["caps_mode" 1]]
          [:j :!Tleft_arrow ["caps_mode" 1]]
