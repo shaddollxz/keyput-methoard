@@ -1,32 +1,90 @@
-# keyput-methoard -- 我的自定义键入法
+# keyput-methoard
 
-通过 [AHK](https://www.autohotkey.com) 实现的自定义键盘，灵感来源于[myKeyMap](https://github.com/xianyukang/MyKeymap)，根据自己的需求重写的一套脚本，当前支持移动光标，快速输入符号
+自定义键盘映射，灵感来源于[myKeyMap](https://github.com/xianyukang/MyKeymap)，根据自己的需求重写的一套配置
 
-## 使用
+## win
 
-在 release 中选择 exe 文件下载
+### 使用
+
+在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中选择 exe 文件下载
 
 或者拉下代码，在本地使用 `powershell` 运行 `win/build/build.ps1` 脚本进行编译
 
+如果需要修改键位，可以 fork 下本仓库，自己进行修改，[AHK 官网](https://www.autohotkey.com)中可以找到脚本语法说明
+
 ### 开机自启动
 
-把`exe`文件放到 `C:\Users\UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下即可
+把`exe`文件放到 `C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下即可
 
-## 说明
+## mac
 
-当前支持 6 种键入模式，分别为
+mac 上推荐使用[karabiner](https://karabiner-elements.pqrs.org/)来设置按键，这里提供了[goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)的配置
 
-- `9模式` 快速移动光标，删除文本
-- `3模式` 快速输入数字，删除文本
-- `分号模式` 快速输入符号，同时有伴生的`引号模式`,用来补全`分号模式`中括号输入的不足
-- `win模式` 把`window + 数字`键和`fn`映射（键盘上的 `fn` 没法捕获到）
-- `caps模式` 不进行输入，主要对窗口进行操作
-- `tab模式` 将该键映射为 `ctrl + alt` 这个最难按的快捷键组合
+> goku 可以用更简洁的语法生成 karabiner 的配置文件
 
-具体规则通过代码查看： [9 模式](/win/modules/mode-9.ahk)，[3 模式](/win/modules/mode-3.ahk)，[分号模式](/win/modules/mode-semi.ahk)，[引号模式](/win/modules/mode-quote.ahk)，[win 模式](/win/modules/mode-win.ahk)，[caps 模式](/win/modules/mode-caps.ahk)
+### 使用
 
-同时还有将`window`键位和快捷键向`mac`兼容的模式：[mac 模式](/win/modules/mode-mac.ahk)，和一些额外的[快捷键](/win/modules/mode-ctrl-alt.ahk)
+- 下载 [karabiner](https://karabiner-elements.pqrs.org/) 和 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
 
-## 在 mac 上使用
+- 在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 karabiner.edn
 
-`autohotkey` 只支持在`windows`系统上使用，如果需要在`mac`中设置键位，推荐使用[karabiner](https://karabiner-elements.pqrs.org/)，同时配合[goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)来生成配置文件，[这里](/mac)提供了同该项目的键位配置
+- 或者拉下代码，在本地使用 `bash` 运行 `mac` 文件夹下的 `build.sh` 脚本来生成 `karabiner.edn`
+
+- 把 `karabiner.edn` 复制到 `~/.config` 下
+
+- 命令行执行命令 `goku`
+
+同样的，如果需要修改键位，可以看看[goku 的配置文档](https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md)自己修改
+
+## 键位替换说明
+
+为了在 `win` 和 `mac` 下手感相同，这里额外做了一些键位修改
+
+### win
+
+把 `右alt` 和 `右ctrl` 进行了替换，和 `mac` 的键位保持一致
+
+### mac
+
+这里只提供了复杂键映射，需要在 `karabiner` 中额外配置 `command`等键的映射，这里给出推荐配置
+
+| from         | to           |
+| ------------ | ------------ |
+| key_code::fn | left_command |
+| left_command | left_option  |
+| left_option  | key_code::fn |
+
+## 键位说明
+
+主要分为 `9模式` `3模式` `分号模式` `caps模式` `tab模式`
+
+### 9 模式
+
+按住 `9` 后按下 `space` 或者 `i` 进入对应的副模式，在副模式时再次按下对应键退出
+
+- 移动键会自动带上 `shift` 进行多选
+- 删除键会自动带上 `ctrl` 能以单词为单位进行删除
+
+![mode_9](/keyboard-map/mode_9.png)
+
+### 3 模式
+
+输入数字，为了保证容错，有几个数字进行了多次设置
+
+![mode_3](/keyboard-map/mode_3.png)
+
+### 分号模式
+
+输入字符，同时为了弥补分号输入没有右括号的问题，额外添加了`引号模式`进行补足
+
+![mode_semi](/keyboard-map/mode_semi.png)
+
+### Caps 模式
+
+主要拿来做页面切换，等和输入没关系的事，需要注意的是在 `mac` 上 `j` 和 `l` 的行为和 `win` 的不同，图中上面的文字为 `mac` 的行为
+
+![mode_caps](/keyboard-map/mode_caps.png)
+
+### Tab 模式
+
+`ctrl + alt` / `command + options` 作为组合键实在不好用，这里为这个组合提供了快捷键
