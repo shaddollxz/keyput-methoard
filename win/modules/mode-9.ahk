@@ -5,8 +5,8 @@ SUB_MODE_SPACE := "Space"
 SUB_MODE_I := "i"
 
 mode_9 := useMode("9")
-mode_9.addSubMode(SUB_MODE_SPACE)
-mode_9.addSubMode(SUB_MODE_I)
+mode_9.addSubMode(SUB_MODE_SPACE, "click")
+mode_9.addSubMode(SUB_MODE_I, "click")
 
 
 *9:: {

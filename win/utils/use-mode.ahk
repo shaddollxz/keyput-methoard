@@ -30,8 +30,8 @@ useMode(pressKey, upOutput?) {
         }
     }
 
-    addSubMode(_, key) {
-        subModes.Push({ key: key, isOpenMode: false })
+    addSubMode(_, key, type) {
+        subModes.Push({ key: key, isOpenMode: false, type: type })
     }
 
     isOpenSubMode(_, key) {
@@ -41,7 +41,16 @@ useMode(pressKey, upOutput?) {
 
     switchSubMode(_, key) {
         subModeData := find(subModes, (item) => item.key == key)
-        subModeData.isOpenMode := !subModeData.isOpenMode
+        switch (subModeData.type) {
+            case "click":
+                subModeData.isOpenMode := !subModeData.isOpenMode
+                return
+            case "hover":
+                subModeData.isOpenMode := true
+                KeyWait(key)
+                subModeData.isOpenMode := false
+                return
+        }
     }
 
     return returnData
