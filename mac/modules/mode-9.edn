@@ -1,22 +1,31 @@
 {:des "9模式"
- :rules [[:9 ["nine_mode" 1] nil {:afterup ["nine_mode" 0]
+ :rules [[:9 ["nine_mode" 1] nil {:afterup [["nine_mode" 0] ["nine_mode_sub_space" 0] ["nine_mode_sub_i" 0]]
                                   :alone :9}]
-         [:w :up_arrow ["nine_mode" 1]] ;; 上
-         [:s :down_arrow ["nine_mode" 1]] ;; 下
-         [:a :left_arrow ["nine_mode" 1]] ;; 左
-         [:f :right_arrow ["nine_mode" 1]] ;; 右
-         [:g :!Qright_arrow ["nine_mode" 1]] ;; end
-         [:q :!Qleft_arrow ["nine_mode" 1]] ;; home
-         [:e :!Eleft_arrow ["nine_mode" 1]] ;; 上一个单词
-         [:d :!Eright_arrow ["nine_mode" 1]] ;; 下一个单词
-         [:u :delete_or_backspace ["nine_mode" 1]] ;; backspace
-         [:p :!Fdelete_or_backspace ["nine_mode" 1]] ;; delete
-         [:!Sw :!Sup_arrow ["nine_mode" 1]] ;; 上+shift
-         [:!Ss :!Sdown_arrow ["nine_mode" 1]] ;; 下+shift
-         [:!Sa :!Sleft_arrow ["nine_mode" 1]] ;; 左+shift
-         [:!Sf :!Sright_arrow ["nine_mode" 1]] ;; 右+shift
-         [:!Sg :!SQright_arrow ["nine_mode" 1]] ;; end+shift
-         [:!Sq :!SQleft_arrow ["nine_mode" 1]] ;; home+shift
-         [:!Se :!SEleft_arrow ["nine_mode" 1]] ;; 上一个单词+shift
-         [:!Sd :!SEright_arrow ["nine_mode" 1]] ;; 下一个单词+shift
+         [:spacebar ["nine_mode_sub_space" 1] [["nine_mode_sub_space" 0] ["nine_mode" 1]]]
+         [:spacebar ["nine_mode_sub_space" 0] [["nine_mode_sub_space" 1] ["nine_mode" 1]]]
+         [:i ["nine_mode_sub_i" 1] [["nine_mode_sub_i" 0] ["nine_mode" 1]]]
+         [:i ["nine_mode_sub_i" 0] [["nine_mode_sub_i" 1] ["nine_mode" 1]]]
+
+         [:w :up_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 上
+         [:s :down_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 下
+         [:a :left_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 左
+         [:f :right_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 右
+         [:g :!Qright_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; end
+         [:q :!Qleft_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; home
+         [:e :!Eleft_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 上一个单词
+         [:d :!Eright_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 下一个单词
+         [:u :delete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode" 1]]] ;; backspace
+         [:p :!Fdelete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode" 1]]] ;; delete
+         ;; 按下空格后进入副模式 方向键会带上 shift
+         [:w :!Sup_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 上+shift
+         [:s :!Sdown_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 下+shift
+         [:a :!Sleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 左+shift
+         [:f :!Sright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 右+shift
+         [:g :!SQright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; end+shift
+         [:q :!SQleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; home+shift
+         [:e :!SEleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 上一个单词+shift
+         [:d :!SEright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 下一个单词+shift
+         ;; 按下 i 后进入副模式 删除键会带上 option （删除上一个/下一个单词）
+         [:u :!Odelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode" 1]]] ;; backspace
+         [:p :!OFdelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode" 1]]] ;; delete
          ]}
