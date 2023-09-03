@@ -22,9 +22,9 @@ useMode(pressKey, upOutput?) {
             item.isOpenMode := false
         }
 
-        ; 这里判断是否在指定时间内只按下了这个键
         ; openMode() 调用处的键位设置为 *keyPress
-        if (A_ThisHotkey = "*" . pressKey && A_TimeSinceThisHotkey < IGNORE_TIME) {
+        ; 如果松开时还是这个热键，就输出它
+        if (A_ThisHotkey = "*" . pressKey) {
             outuptKey := IsSet(upOutput) ? upOutput : pressKey
             return Send("{Blind}" . outuptKey)
         }
