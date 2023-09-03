@@ -12,6 +12,5 @@
         "./modules/mode-9.edn"
         "./modules/mode-caps.edn"
         "./modules/mode-tab.edn"
-        "./modules/mode-fn.edn"
         ]
  }

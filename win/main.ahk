@@ -8,4 +8,3 @@
 #Include "./modules/mode-quote.ahk"
 #Include "./modules/mode-semi.ahk"
 #Include "./modules/mode-tab.ahk"
-#Include "./modules/mode-win.ahk"
