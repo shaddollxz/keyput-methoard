@@ -1,7 +1,13 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 
+SUB_MODE_SPACE := "Space"
+SUB_MODE_I := "i"
+
 modeData_9 := useMode("9")
+modeData_9.addSubMode(SUB_MODE_SPACE)
+modeData_9.addSubMode(SUB_MODE_I)
+
 
 *9:: {
     modeData_9.openMode()
@@ -9,34 +15,81 @@ modeData_9 := useMode("9")
 
 ; 对应模式下的映射
 #HotIf (modeData_9.isOpenMode)
+*Space:: {
+    modeData_9.switchSubMode(SUB_MODE_SPACE)
+}
+*i:: {
+    modeData_9.switchSubMode(SUB_MODE_I)
+}
+
 *w:: {
-    Send(keyMap.up)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyUp)
+    } else {
+        Send(keyMap.up)
+    }
 }
 *s:: {
-    Send(keyMap.down)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyDown)
+    } else {
+        Send(keyMap.down)
+    }
 }
 *a:: {
-    Send(keyMap.left)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyLeft)
+    } else {
+        Send(keyMap.left)
+    }
 }
 *f:: {
-    Send(keyMap.right)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyRight)
+    } else {
+        Send(keyMap.right)
+    }
 }
 *g:: {
-    Send(keyMap.end)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyEnd)
+    } else {
+        Send(keyMap.end)
+    }
 }
 *q:: {
-    Send(keyMap.home)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyHome)
+    } else {
+        Send(keyMap.home)
+    }
 }
 *e:: {
-    Send(keyMap.previousWord)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyPreviousWord)
+    } else {
+        Send(keyMap.previousWord)
+    }
 }
 *d:: {
-    Send(keyMap.nextWord)
+    if (modeData_9.isOpenSubMode(SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyNextWord)
+    } else {
+        Send(keyMap.nextWord)
+    }
 }
 *u:: {
-    Send(keyMap.backspace)
+    if (modeData_9.isOpenSubMode(SUB_MODE_I)) {
+        Send(keyMap.ctrl . keyMap.onlyBackspace)
+    } else {
+        Send(keyMap.backspace)
+    }
 }
 *p:: {
-    Send(keyMap.delete)
+    if (modeData_9.isOpenSubMode(SUB_MODE_I)) {
+        Send(keyMap.ctrl . keyMap.onlyDelete)
+    } else {
+        Send(keyMap.delete)
+    }
 }
 #HotIf

@@ -42,4 +42,6 @@ keyMap := {
     onlyEnter: "{Enter}",
     onlyCaps: "{CapsLock}",
     onlyTab: "{Tab}",
+    onlyPreviousWord: "^{Left}",
+    onlyNextWord: "^{Right}",
 }
