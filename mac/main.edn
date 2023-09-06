@@ -1,8 +1,6 @@
 ;; 这里的配置每个模块都通用（因为最后都会被集成为一个文件）
 ;; 通过 osascript -e 'id of app "AppName"' 命令获得 app 的标识
-{:applications {:firefox ["^org\\.mozilla\\.firefox$"]
-                :chrome ["^com\\.google\\.Chrome$"]
-                :edge ["^com\\.microsoft\\.edgemac$"]
+{:applications {:browser ["^org\\.mozilla\\.firefox$" "^com\\.google\\.Chrome$" "^com\\.microsoft\\.edgemac$"]
                 :vscode ["^com\\.microsoft\\.VSCode$"]}
  :main [
         ;; 每个模块单独一行才能被脚本解析到
