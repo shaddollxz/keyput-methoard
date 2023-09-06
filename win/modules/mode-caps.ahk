@@ -1,5 +1,6 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
+#Include "../utils/assert.ahk"
 
 mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
@@ -42,6 +43,12 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 关闭标签页 另一个快捷键是 alt + q
 *c:: {
     Send(keyMap.ctrl . "w")
+}
+
+*v:: {
+    if (isBrowser()) {
+        Send("{F5}")
+    }
 }
 
 ; 切换应用
