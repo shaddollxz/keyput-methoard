@@ -10,7 +10,7 @@
 
 或者拉下代码，在本地使用 `powershell` 运行 `win/build/build.ps1` 脚本进行编译
 
-如果需要修改键位，可以 fork 下本仓库，自己进行修改，[AHK 官网](https://www.autohotkey.com)中可以找到脚本语法说明
+如果需要修改键位，可以 fork 下本仓库，自己进行修改，[AHK 官网](https://www.autohotkey.com) 中可以找到脚本语法说明
 
 ### 开机自启动
 
@@ -62,7 +62,7 @@ mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置�
 
 在按住 `9` 时同时对其他键操作会进入对应的副模式
 
-- 按下 `space`：移动键会自动带上 `shift` 进行多选，再次按下该键退出
+- 按下 `space`：移动键会自动带上 `shift` 进行多选，再次按下该键或按下删除键、功能键退出
 - 按下 `i`：删除键会自动带上 `ctrl` 能以单词为单位进行删除，再次按下该键退出
 - 按住 `caps`：上下移动键`w s`会同时带上 `alt` 能将多行文本上下移动，可以和 `space` 副模式同时使用
 
