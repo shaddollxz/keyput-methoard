@@ -21,8 +21,8 @@
          [:u [:delete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
          [:p [:!Fdelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
          ;; 按下空格后进入副模式 方向键会带上 shift
-         [:w :!Sup_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 上+shift
-         [:s :!Sdown_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 下+shift
+         [:w :!Sup_arrow [["nine_mode_sub_space" 1] ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 上+shift
+         [:s :!Sdown_arrow [["nine_mode_sub_space" 1] ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 下+shift
          [:a :!Sleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 左+shift
          [:f :!Sright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 右+shift
          [:g :!SQright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; end+shift
@@ -46,7 +46,12 @@
          ;; 按住 caps 后进入副模式 上下键会带上 alt 进行移动代码块
          [:w :!Oup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
          [:s :!Odown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
+         [:w :!OSup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
+         [:s :!OSdown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
+         [:!Sw :!OSup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
+         [:!Ss :!OSdown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
          ;; 复制粘贴剪切功能
          [:x [:!Cx ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:c [:!Cc ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
-         [:v [:!Cv ["nine_mode_sub_space" 0]] ["nine_mode" 1]]]}
+         [:v [:!Cv ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
+         [:z [:!Cz ["nine_mode_sub_space" 0]] ["nine_mode" 1]]]}
