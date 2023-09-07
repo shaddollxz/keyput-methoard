@@ -54,4 +54,5 @@
          [:x [:!Cx ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:c [:!Cc ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:v [:!Cv ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
-         [:z [:!Cz ["nine_mode_sub_space" 0]] ["nine_mode" 1]]]}
+         [:z [:!Cz ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
+         [:y [:!Cs ["nine_mode_sub_space" 0]] ["nine_mode" 1]]]}
