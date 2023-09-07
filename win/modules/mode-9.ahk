@@ -3,10 +3,12 @@
 
 MODE_9_SUB_MODE_SPACE := "Space"
 MODE_9_SUB_MODE_I := "i"
+MODE_9_SUB_MODE_CAPS := "CapsLock"
 
 mode_9 := useMode("9")
 mode_9.addSubMode(MODE_9_SUB_MODE_SPACE, "click")
 mode_9.addSubMode(MODE_9_SUB_MODE_I, "click")
+mode_9.addSubMode(MODE_9_SUB_MODE_CAPS, "hover")
 
 
 *9:: {
@@ -21,19 +23,38 @@ mode_9.addSubMode(MODE_9_SUB_MODE_I, "click")
 *i:: {
     mode_9.switchSubMode(MODE_9_SUB_MODE_I)
 }
+*CapsLock:: {
+    mode_9.switchSubMode(MODE_9_SUB_MODE_CAPS)
+}
 
 *w:: {
+    isOpenCapsMode := mode_9.isOpenSubMode(MODE_9_SUB_MODE_CAPS)
+
     if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_SPACE)) {
-        Send(keyMap.shift . keyMap.onlyUp)
+        if (isOpenCapsMode) {
+            return Send(keyMap.shift . keyMap.alt . keyMap.onlyUp)
+        }
+        return Send(keyMap.shift . keyMap.onlyUp)
     } else {
-        Send(keyMap.up)
+        if (isOpenCapsMode) {
+            return Send(keyMap.alt . keyMap.onlyUp)
+        }
+        return Send(keyMap.up)
     }
 }
 *s:: {
+    isOpenCapsMode := mode_9.isOpenSubMode(MODE_9_SUB_MODE_CAPS)
+
     if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_SPACE)) {
-        Send(keyMap.shift . keyMap.onlyDown)
+        if (isOpenCapsMode) {
+            return Send(keyMap.shift . keyMap.alt . keyMap.onlyDown)
+        }
+        return Send(keyMap.shift . keyMap.onlyDown)
     } else {
-        Send(keyMap.down)
+        if (isOpenCapsMode) {
+            return Send(keyMap.alt . keyMap.onlyDown)
+        }
+        return Send(keyMap.down)
     }
 }
 *a:: {
@@ -78,12 +99,14 @@ mode_9.addSubMode(MODE_9_SUB_MODE_I, "click")
         Send(keyMap.nextWord)
     }
 }
+
 *u:: {
     if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_I)) {
         Send(keyMap.ctrl . keyMap.onlyBackspace)
     } else {
         Send(keyMap.backspace)
     }
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
 }
 *p:: {
     if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_I)) {
@@ -91,5 +114,27 @@ mode_9.addSubMode(MODE_9_SUB_MODE_I, "click")
     } else {
         Send(keyMap.delete)
     }
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+}
+
+*z:: {
+    Send(keyMap.ctrl . "z")
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+}
+*x:: {
+    Send(keyMap.ctrl . "x")
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+}
+*c:: {
+    Send(keyMap.ctrl . "c")
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+}
+*v:: {
+    Send(keyMap.ctrl . "v")
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+}
+*y:: {
+    Send(keyMap.ctrl . "s")
+    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
 }
 #HotIf

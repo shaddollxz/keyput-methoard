@@ -8,7 +8,8 @@ useMode(pressKey, upOutput?) {
         openMode: openMode,
         addSubMode: addSubMode,
         switchSubMode: switchSubMode,
-        isOpenSubMode: isOpenSubMode
+        isOpenSubMode: isOpenSubMode,
+        closeSubMode: closeSubMode
     }
 
     openMode(_) {
@@ -51,6 +52,11 @@ useMode(pressKey, upOutput?) {
                 subModeData.isOpenMode := false
                 return
         }
+    }
+
+    closeSubMode(_, key) {
+        subModeData := find(subModes, (item) => item.key == key)
+        subModeData.isOpenMode := false
     }
 
     return returnData
