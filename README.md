@@ -14,11 +14,11 @@
 
 ### 开机自启动
 
-把`exe`文件放到 `C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下即可
+把 exe 文件放到 `C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下即可
 
 ## mac
 
-mac 上推荐使用[karabiner](https://karabiner-elements.pqrs.org/)来设置按键，这里提供了[goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)的配置
+mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置按键，这里提供了 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master) 的配置
 
 > goku 可以用更简洁的语法生成 karabiner 的配置文件
 
@@ -28,7 +28,7 @@ mac 上推荐使用[karabiner](https://karabiner-elements.pqrs.org/)来设置按
 
 - 在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 karabiner.edn
 
-- 或者拉下代码，在本地使用 `bash` 运行 `mac` 文件夹下的 `build.sh` 脚本来生成 `karabiner.edn`
+- 或者拉下代码，在本地使用 `bash` 运行 mac 文件夹下的 `build.sh` 脚本来生成 `karabiner.edn`
 
 - 把 `karabiner.edn` 复制到 `~/.config` 下
 
@@ -60,10 +60,11 @@ mac 上推荐使用[karabiner](https://karabiner-elements.pqrs.org/)来设置按
 
 ### 9 模式
 
-按住 `9` 后按下 `space` 或者 `i` 进入对应的副模式，在副模式时再次按下对应键退出
+在按住 `9` 时同时对其他键操作会进入对应的副模式
 
-- 移动键会自动带上 `shift` 进行多选
-- 删除键会自动带上 `ctrl` 能以单词为单位进行删除
+- 按下 `space`：移动键会自动带上 `shift` 进行多选，再次按下该键退出
+- 按下 `i`：删除键会自动带上 `ctrl` 能以单词为单位进行删除，再次按下该键退出
+- 按住 `caps`：上下移动键`w s`会同时带上 `alt` 能将多行文本上下移动，可以和 `space` 副模式同时使用
 
 ![mode_9](/keyboard-map/mode_9.png)
 
@@ -75,13 +76,13 @@ mac 上推荐使用[karabiner](https://karabiner-elements.pqrs.org/)来设置按
 
 ### 分号模式
 
-输入字符，同时为了弥补分号输入没有右括号的问题，额外添加了`引号模式`进行补足
+输入字符，同时为了弥补分号输入没有右括号的问题，额外添加了 `引号模式` 进行补足
 
 ![mode_semi](/keyboard-map/mode_semi.png)
 
 ### Caps 模式
 
-主要拿来做页面切换，等和输入没关系的事，需要注意的是在 `mac` 上 `j` 和 `l` 的行为和 `win` 的不同，图中上面的文字为 `mac` 的行为
+主要拿来做页面切换，等和输入没关系的事，需要注意的是在 mac 上 `j` 和 `l` 的行为和 win 的不同，图中上面的文字为 mac 的行为
 
 ![mode_caps](/keyboard-map/mode_caps.png)
 
