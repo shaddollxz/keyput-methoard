@@ -7,19 +7,24 @@ cd $(dirname $0)
 
 rm $output
 
-writeFile() {
+getFileData() {
     local path=$1
+
+    data=""
 
     while IFS= read line; do
         if [[ $line =~ \.edn\"$ ]]; then
-            $(writeFile $(echo $line | sed 's/"//g'))
+            data="${data}$(getFileData $(echo $line | sed 's/"//g'))"
         else
-            # 转换后的 edn 文件中 显示一个 \ 需要转换为 \\ 在脚本中为 \\\\
-            echo $(echo $line | sed 's/\\/\\\\\\\\/g') >>$output
+            data="${data}$(echo $line | sed "s/;.*//")"
         fi
     done <$path
 
-    echo $line >>$output
+    data="${data}${line}"
+    echo $data
 }
 
-writeFile $input
+data=$(getFileData $input)
+
+# 转换后的 edn 文件中 显示一个 \ 需要转换为 \\ 在脚本中为 \\\\
+echo $data | sed 's/\\/\\\\/g' >>$output
