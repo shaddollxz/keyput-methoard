@@ -4,7 +4,7 @@
          [:q :!WQf ["caps_mode" 1]] ;; 全屏
          [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
-         [:v :f5 [:browser ["caps_mode" 1]]] ;; 刷新浏览器
+         [:v :!Cr [:browser ["caps_mode" 1]]] ;; 刷新浏览器
          ;; 桌面左右移动
          [:f :!Tright_arrow ["caps_mode" 1]]
          [:s :!Tleft_arrow ["caps_mode" 1]]
