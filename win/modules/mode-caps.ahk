@@ -50,6 +50,16 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
         Send("{F5}")
     }
 }
+*z:: {
+    if (isBrowser()) {
+        Send(keyMap.alt . keyMap.onlyRight)
+    }
+}
+*x:: {
+    if (isBrowser()) {
+        Send(keyMap.alt . keyMap.onlyLeft)
+    }
+}
 
 ; 切换应用
 ; 上一个运行窗口
