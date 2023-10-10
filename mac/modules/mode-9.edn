@@ -8,6 +8,7 @@
          [:i ["nine_mode_sub_i" 0] [["nine_mode_sub_i" 1] ["nine_mode" 1]]]
          [:caps_lock ["nine_mode_sub_caps" 1] [["nine_mode_sub_caps" 0] ["nine_mode" 1]] {:afterup ["nine_mode_sub_caps" 0] :alone nil}]
 
+         ;; 光标移动
          [:w :up_arrow [["nine_mode_sub_space" 0] ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 上
          [:s :down_arrow [["nine_mode_sub_space" 0]  ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 下
          [:a :left_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 左
@@ -16,11 +17,9 @@
          [:q :!Qleft_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; home
          [:e :!Eleft_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 上一个单词
          [:d :!Eright_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; 下一个单词
-         [:u :delete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; backspace
-         [:p :!Fdelete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; delete
-         [:u [:delete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
-         [:p [:!Fdelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
-         ;; 按下空格后进入副模式 方向键会带上 shift
+         [:r :!Fup_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; pageup
+         [:j :!Fdown_arrow [["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; pagedown
+         ;; 按下空格后进入 space 模式 方向键会带上 shift
          [:w :!Sup_arrow [["nine_mode_sub_space" 1] ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 上+shift
          [:s :!Sdown_arrow [["nine_mode_sub_space" 1] ["nine_mode_sub_caps" 0] ["nine_mode" 1]]] ;; 下+shift
          [:a :!Sleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 左+shift
@@ -29,11 +28,8 @@
          [:q :!SQleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; home+shift
          [:e :!SEleft_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 上一个单词+shift
          [:d :!SEright_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; 下一个单词+shift
-         ;; 按下 i 后进入副模式 删除键会带上 option （删除上一个/下一个单词）
-         [:u :!Odelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; backspace
-         [:p :!OFdelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; delete
-         [:u [:!Odelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; backspace
-         [:p [:!OFdelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; delete
+         [:r :!SFup_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; pageup+shift
+         [:j :!SFdown_arrow [["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; pagedown+shift
          ;; 同时兼容 shift + 移动
          [:!Sw :!Sup_arrow ["nine_mode" 1]] ;; 上+shift
          [:!Ss :!Sdown_arrow ["nine_mode" 1]] ;; 下+shift
@@ -43,14 +39,29 @@
          [:!Sq :!SQleft_arrow ["nine_mode" 1]] ;; home+shift
          [:!Se :!SEleft_arrow ["nine_mode" 1]] ;; 上一个单词+shift
          [:!Sd :!SEright_arrow ["nine_mode" 1]] ;; 下一个单词+shift
-         ;; 按住 caps 后进入副模式 上下键会带上 alt 进行移动代码块
+         [:!Sr :!SFup_arrow ["nine_mode" 1]] ;; pageup+shift
+         [:!Sj :!SFdown_arrow ["nine_mode" 1]] ;; pagedown+shift
+
+         ;; 删除键 使用后会自动退出 space 模式
+         [:u :delete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; backspace
+         [:p :!Fdelete_or_backspace [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; delete
+         [:u [:delete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
+         [:p [:!Fdelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 0] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
+         ;; 按下 i 后进入 option 模式 删除键会带上 option （删除上一个/下一个单词）
+         [:u :!Odelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; backspace
+         [:p :!OFdelete_or_backspace [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]] ;; delete
+         [:u [:!Odelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; backspace
+         [:p [:!OFdelete_or_backspace ["nine_mode_sub_space" 0]] [["nine_mode_sub_i" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]] ;; delete
+
+         ;; 按住 caps 后进入 alt 模式 上下键会带上 alt 进行移动代码块
          [:w :!Oup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
          [:s :!Odown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
          [:w :!OSup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
          [:s :!OSdown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 1] ["nine_mode" 1]]]
          [:!Sw :!OSup_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
          [:!Ss :!OSdown_arrow [["nine_mode_sub_caps" 1] ["nine_mode_sub_space" 0] ["nine_mode" 1]]]
-         ;; 复制粘贴剪切功能
+
+         ;; 复制粘贴剪切功能 会自动退出 space 模式
          [:x [:!Cx ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:c [:!Cc ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:v [:!Cv ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
