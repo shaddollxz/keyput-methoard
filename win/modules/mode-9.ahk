@@ -99,6 +99,20 @@ mode_9.addSubMode(MODE_9_SUB_MODE_CAPS, "hover")
         Send(keyMap.nextWord)
     }
 }
+*r:: {
+    if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyPageUp)
+    } else {
+        Send(keyMap.onlyPageUp)
+    }
+}
+*j:: {
+    if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_SPACE)) {
+        Send(keyMap.shift . keyMap.onlyPageDown)
+    } else {
+        Send(keyMap.pageDown)
+    }
+}
 
 *u:: {
     if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_I)) {
