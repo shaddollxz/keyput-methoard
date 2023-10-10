@@ -6,3 +6,8 @@ RAlt::RCtrl
 <^q:: {
     WinClose("A")
 }
+
+; 左ctrl + h 隐藏当前活动窗口
+<^h:: {
+    WinMinimize("A")
+}
