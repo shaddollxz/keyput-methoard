@@ -11,11 +11,11 @@
          [:f :!Tright_arrow ["caps_mode" 1]]
          [:s :!Tleft_arrow ["caps_mode" 1]]
          ;; 标签页切换
-         [:e :!COleft_arrow ["caps_mode" 1]] ;; cmd + option + left
-         [:d :!COright_arrow ["caps_mode" 1]] ;; cmd + option + right
+         [:e :!SCopen_bracket ["caps_mode" 1]] ;; shift + cmd + {
+         [:d :!SCclose_bracket ["caps_mode" 1]] ;; shift + cmd + }
          ;; 双手模式
          [:j :!Tleft_arrow ["caps_mode" 1]]
          [:l :!Tright_arrow ["caps_mode" 1]]
-         [:i :!COleft_arrow ["caps_mode" 1]] ;; cmd + option + left
-         [:k :!COright_arrow ["caps_mode" 1]]];; cmd + option + right
+         [:i :!SCopen_bracket ["caps_mode" 1]] ;; cmd + option + left
+         [:k :!SCclose_bracket ["caps_mode" 1]]];; cmd + option + right
  }
