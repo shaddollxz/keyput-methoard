@@ -2,6 +2,10 @@
 ;; 通过 osascript -e 'id of app "AppName"' 命令获得 app 的标识
 {:applications {:browser ["^org\\.mozilla\\.firefox$" "^com\\.google\\.Chrome$" "^com\\.microsoft\\.edgemac$"]
                 :vscode ["^com\\.microsoft\\.VSCode$"]}
+
+ ;; 使用 trans 作为命令行翻译工具
+ :templates {:translate "osascript -e 'tell application \\\"System Events\\\" to keystroke \\\"c\\\" using {command down}' && osascript -e 'tell application \\\"Terminal\\\" to activate do script \\\"trans $(osascript -e \\\"\"get the clipboard\\\"\") -s en -t zh-CN -b\\\"'"}
+
  :main [
         ;; 每个模块单独一行才能被脚本解析到
         "./modules/mode-semi.edn"

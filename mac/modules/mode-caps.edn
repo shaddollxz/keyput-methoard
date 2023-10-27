@@ -17,5 +17,7 @@
          [:j :!Tleft_arrow ["caps_mode" 1]]
          [:l :!Tright_arrow ["caps_mode" 1]]
          [:i :!SCopen_bracket ["caps_mode" 1]] ;; cmd + option + left
-         [:k :!SCclose_bracket ["caps_mode" 1]]];; cmd + option + right
+         [:k :!SCclose_bracket ["caps_mode" 1]] ;; cmd + option + right
+
+         [:t [:translate] ["caps_mode" 1]]]
  }

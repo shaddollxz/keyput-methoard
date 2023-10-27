@@ -27,4 +27,4 @@ getFileData() {
 data=$(getFileData $input)
 
 # 转换后的 edn 文件中 显示一个 \ 需要转换为 \\ 在脚本中为 \\\\
-echo $data | sed 's/\\/\\\\/g' >>$output
+echo $data | sed 's/\\\./\\\\./g' | sed 's/\\\"\"/\\\\\\\"/g' >>$output
