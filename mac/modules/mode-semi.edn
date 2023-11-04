@@ -8,7 +8,7 @@
          [:t :!Rperiod ["semi_mode" 1]] ;; >
          [:y :!R5 ["semi_mode" 1]] ;; %
          [:u :!R8 ["semi_mode" 1]] ;; *
-         [:i :slash ["semi_mode" 1]] ;; /
+         [:i :slash ["semi_mode" 1]] ;; / 这里当除法符号使用，注释的话用 space 更舒服
          [:o :!Rquote ["semi_mode" 1]] ;; “
          [:a :!R2 ["semi_mode" 1]] ;; @
          [:s :!R7 ["semi_mode" 1]] ;; &
@@ -26,4 +26,5 @@
          [:b :!R4 ["semi_mode" 1]] ;; $
          [:n :!Rslash ["semi_mode" 1]] ;; ?
          [:m :!Rgrave_accent_and_tilde ["semi_mode" 1]] ;; ~
+         [:spacebar :slash ["semi_mode" 1]] ;; /
          ]}
