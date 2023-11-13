@@ -50,6 +50,10 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *c:: {
     Send(keyMap.ctrl . "w")
 }
+; 新增标签页
+*t:: {
+    Send(keyMap.ctrl . "t")
+}
 
 *v:: {
     if (isBrowser()) {
