@@ -3,13 +3,15 @@
                                           :alone :caps_lock}]
          [:q :!WQf ["caps_mode" 1]] ;; 全屏
          [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
+         ;; 桌面左右移动
+         [:f :!Tright_arrow ["caps_mode" 1]]
+         [:s :!Tleft_arrow ["caps_mode" 1]]
+         [:spacebar :!Ctab ["caps_mode" 1]]
+         [:tab :mission_control ["caps_mode" 1]]
          ;; 浏览器中的场景
          [:v :!Cr [:browser ["caps_mode" 1]]] ;; 刷新浏览器
          [:x :!Cleft_arrow [:browser ["caps_mode" 1]]] ;; 返回
          [:z :!Cright_arrow [:browser ["caps_mode" 1]]] ;; 前进
-         ;; 桌面左右移动
-         [:f :!Tright_arrow ["caps_mode" 1]]
-         [:s :!Tleft_arrow ["caps_mode" 1]]
          ;; 有标签页的场景
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
          [:t :!Ct ["caps_mode" 1]] ;; 新建标签页
