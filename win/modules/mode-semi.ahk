@@ -87,4 +87,7 @@ mode_semi := useMode(";")
 *m:: {
     Send("~")
 }
+*Space:: {
+    Send("/")
+}
 #HotIf

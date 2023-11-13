@@ -6,6 +6,7 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 *CapsLock:: {
     mode_caps.openMode()
+    Send("{Alt Up}")
 }
 
 #HotIf mode_caps.isOpenMode
@@ -24,8 +25,13 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 }
 
 ; 打开桌面控制台
-*Space:: {
+*Tab:: {
     Send(keyMap.win . keyMap.onlyTab)
+}
+
+*Space:: {
+    Send("{Alt Down}")
+    Send(keyMap.onlyTab)
 }
 
 ; 浏览器或者代码编辑器中，切换标签页
