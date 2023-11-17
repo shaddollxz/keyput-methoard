@@ -47,4 +47,5 @@
          [:comma :!COcomma ["tab_mode" 1]]
          [:period :!COperiod ["tab_mode" 1]]
          [:slash :!COslash ["tab_mode" 1]]
+         [:spacebar :!COspacebar ["tab_mode" 1]] ; 如果用到了这个快捷键，需要到 设置 => 键盘 => 键盘快捷键 => 聚焦 中关闭 mac 的默认快捷键
          ]}
