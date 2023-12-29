@@ -12,9 +12,13 @@
          [:v :!Cr [:browser ["caps_mode" 1]]] ;; 刷新浏览器
          [:x :!Copen_bracket [:browser ["caps_mode" 1]]] ;; 返回 cmd + [
          [:z :!Cclose_bracket [:browser ["caps_mode" 1]]] ;; 前进 cmd + ]
+         ;; vscode 中的场景
+         [:x :!Thyphen [:vscode ["caps_mode" 1]]] ;; 返回 ctrl + -
+         [:z :!SThyphen [:vscode ["caps_mode" 1]]] ;; 前进 shift + ctrl + -
          ;; 有标签页的场景
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
+         [:b :!CSt ["caps_mode" 1]] ;; 重新打开标签页
          [:t :!Ct ["caps_mode" 1]] ;; 新建标签页
          [:e :!SCopen_bracket ["caps_mode" 1]] ;; 左边标签页 shift + cmd + [
-         [:d :!SCclose_bracket ["caps_mode" 1]]] ;; 右边标签页 shift + cmd + ]
- }
+         [:d :!SCclose_bracket ["caps_mode" 1]] ;; 右边标签页 shift + cmd + ]
+         ]}
