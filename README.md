@@ -66,7 +66,7 @@ mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置�
 
 - 按下 `space`：移动键会自动带上 `shift` 进行多选，再次按下该键或按下删除键、功能键退出
 - 按下 `i`：删除键会自动带上 `ctrl` 能以单词为单位进行删除，再次按下该键退出
-- 按住 `caps`：上下移动键`w s`会同时带上 `alt` 能将多行文本上下移动，可以和 `space` 副模式同时使用
+- 按住 `caps`：上下移动键`w s`会同时带上 `alt` 能将多行文本上下移动，可以和 `space` 副模式同时使用；在使用代码折叠功能（9 + h）时，带上该键为展开代码
 
 ![mode_9](/keyboard-map/mode_9.png)
 
@@ -84,7 +84,7 @@ mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置�
 
 ### Caps 模式
 
-主要拿来做页面切换，等和输入没关系的事，需要注意的是在 mac 上 `j` 和 `l` 的行为和 win 的不同，图中上面的文字为 mac 的行为
+主要拿来做页面切换，浏览器快捷键等和输入没关系的事
 
 ![mode_caps](/keyboard-map/mode_caps.png)
 
