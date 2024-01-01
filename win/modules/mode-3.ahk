@@ -10,23 +10,18 @@ mode_3 := useMode("3")
 
 ; 对应模式下的映射
 #HotIf (mode_3.isOpenMode)
-*Space:: {
-    Send("0")
-}
-*b:: {
-    Send("1")
-}
 *n:: {
-    Send("2")
+    Send("1")
 }
 *m:: {
     Send("2")
 }
+*,::
 *.:: {
     Send("3")
 }
 *h:: {
-    Send("4")
+    Send("0")
 }
 *j:: {
     Send("4")
@@ -36,9 +31,6 @@ mode_3 := useMode("3")
 }
 *l:: {
     Send("6")
-}
-*y:: {
-    Send("7")
 }
 *u:: {
     Send("7")
@@ -57,9 +49,6 @@ mode_3 := useMode("3")
     Send(keyMap.delete)
 }
 *q:: {
-    Send(keyMap.backspace)
-}
-*1:: {
     Send(keyMap.backspace)
 }
 #HotIf
