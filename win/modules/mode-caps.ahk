@@ -36,13 +36,11 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 ; 浏览器或者代码编辑器中，切换标签页
 ; 向左
-*e::
-*i:: {
+*e:: {
     Send(keyMap.ctrl . keyMap.onlyPageUp)
 }
 ; 向右
-*d::
-*k:: {
+*d:: {
     Send(keyMap.ctrl . keyMap.onlyPageDown)
 }
 
@@ -78,14 +76,18 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
     }
 }
 
-; 切换应用
-; 上一个运行窗口
+; vscode 切换分栏
 *j:: {
-    Send(keyMap.alt . keyMap.shift . keyMap.onlyEsc)
+    if (isVscode()) {
+        Send(keyMap.ctrl . "k")
+        Send(keyMap.ctrl . keyMap.onlyLeft)
+    }
 }
-; 下一个运行窗口
 *l:: {
-    Send(keyMap.alt . keyMap.onlyEsc)
+    if (isVscode()) {
+        Send(keyMap.ctrl . "k")
+        Send(keyMap.ctrl . keyMap.onlyRight)
+    }
 }
 
 ; 切换桌面

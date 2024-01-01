@@ -1,5 +1,6 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
+#Include "../utils/assert.ahk"
 
 MODE_9_SUB_MODE_SPACE := "Space"
 MODE_9_SUB_MODE_I := "i"
@@ -147,8 +148,15 @@ mode_9.addSubMode(MODE_9_SUB_MODE_CAPS, "hover")
     Send(keyMap.ctrl . "v")
     mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
 }
-*y:: {
-    Send(keyMap.ctrl . "s")
-    mode_9.closeSubMode(MODE_9_SUB_MODE_SPACE)
+
+; 收起代码块
+*h:: {
+    if (isVscode()) {
+        if (mode_9.isOpenSubMode(MODE_9_SUB_MODE_CAPS)) {
+            Send(keyMap.ctrl . keyMap.shift . "]")
+        } else {
+            Send(keyMap.ctrl . keyMap.shift . "[")
+        }
+    }
 }
 #HotIf
