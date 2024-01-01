@@ -54,19 +54,26 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *t:: {
     Send(keyMap.ctrl . "t")
 }
-
+; 恢复上一个关闭的标签页
+*b:: {
+    Send(keyMap.ctrl . keyMap.shift . "t")
+}
+; 刷新标签页
 *v:: {
     if (isBrowser()) {
         Send("{F5}")
     }
 }
+
+; 前进
 *z:: {
-    if (isBrowser()) {
+    if (isBrowser() || isVscode()) {
         Send(keyMap.alt . keyMap.onlyRight)
     }
 }
+; 后退
 *x:: {
-    if (isBrowser()) {
+    if (isBrowser() || isVscode()) {
         Send(keyMap.alt . keyMap.onlyLeft)
     }
 }
