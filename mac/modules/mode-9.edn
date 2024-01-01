@@ -66,4 +66,8 @@
          [:c [:!Cc ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:v [:!Cv ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
          [:z [:!Cz ["nine_mode_sub_space" 0]] ["nine_mode" 1]]
-         [:y [:!Cs ["nine_mode_sub_space" 0]] ["nine_mode" 1]]]}
+
+         ;; 展开收起代码块 按住 caps 是展开，不按住是收起
+         [:h :!COopen_bracket [:vscode ["nine_mode" 1] ["nine_mode_sub_caps" 0]]] ;; 收起代码块
+         [:h :!COclose_bracket [:vscode ["nine_mode" 1] ["nine_mode_sub_caps" 1]]] ;; 展开代码块
+         ]}

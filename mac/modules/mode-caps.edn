@@ -15,6 +15,8 @@
          ;; vscode 中的场景
          [:x :!Thyphen [:vscode ["caps_mode" 1]]] ;; 返回 ctrl + -
          [:z :!SThyphen [:vscode ["caps_mode" 1]]] ;; 前进 shift + ctrl + -
+         [:j [:!Ck :!Cleft_arrow] [:vscode ["caps_mode" 1]]] ;; 分栏切换到左侧
+         [:l [:!Ck :!Cright_arrow] [:vscode ["caps_mode" 1]]] ;; 分栏切换到右侧
          ;; 有标签页的场景
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
          [:b :!CSt ["caps_mode" 1]] ;; 重新打开标签页
