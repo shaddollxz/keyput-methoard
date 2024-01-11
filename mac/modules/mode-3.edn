@@ -1,18 +1,32 @@
 {:des "3模式"
  :rules [[:3 ["three_mode" 1] nil {:afterup ["three_mode" 0]
                                    :alone :3}]
-         [:u :7 ["three_mode" 1]] ;; 7
-         [:i :8 ["three_mode" 1]] ;; 8
-         [:o :8 ["three_mode" 1]] ;; 8
-         [:p :9 ["three_mode" 1]] ;; 9
-         [:h :0 ["three_mode" 1]] ;; 0
-         [:j :4 ["three_mode" 1]] ;; 4
-         [:k :5 ["three_mode" 1]] ;; 5
-         [:l :6 ["three_mode" 1]] ;; 6
-         [:n :1 ["three_mode" 1]] ;; 1
-         [:m :2 ["three_mode" 1]] ;; 2
-         [:comma :3 ["three_mode" 1]] ;; 3
-         [:period :3 ["three_mode" 1]] ;; 3
-         [:r :!Fdelete_or_backspace ["three_mode" 1]] ;; delete
-         [:q :delete_or_backspace ["three_mode" 1]] ;; backspace
+         [:spacebar ["three_mode_sub_space" 1] [["three_mode_sub_space" 0] ["three_mode" 1]] {:afterup ["three_mode_sub_space" 0] :alone nil}]
+
+         [:u :7 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 7
+         [:i :8 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 8
+         [:o :8 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 8
+         [:p :9 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 9
+         [:h :0 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 0
+         [:j :4 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 4
+         [:k :5 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 5
+         [:l :6 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 6
+         [:n :1 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 1
+         [:m :2 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 2
+         [:comma :3 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 3
+         [:period :3 [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; 3
+         [:r :!Fdelete_or_backspace [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; delete
+         [:q :delete_or_backspace [["three_mode_sub_space" 0] ["three_mode" 1]]] ;; backspace
+
+         ;; debuge
+         [:h :f9 [["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 断点
+         [:k :f11 [["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 单步调试 逐语句 关闭 mac 的 f11 快捷键
+         [:l :f10 [["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 逐过程   逐语句 但是跳过函数内容
+         [:j :!Sf11 [["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 单步跳出
+         [:i :f5 [:vscode ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 继续
+         [:i :f8 [:browser ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 继续
+         [:p :!Sf5 [:vscode ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 停止调试
+         [:p :f8 [:browser ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 停止调试
+         [:n :!SCf5 [:vscode ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 重新开始
+         [:n :!Cr [:browser ["three_mode_sub_space" 1] ["three_mode" 1]]] ;; 重新开始
          ]}
