@@ -37,11 +37,20 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 浏览器或者代码编辑器中，切换标签页
 ; 向左
 *e:: {
-    Send(keyMap.ctrl . keyMap.onlyPageUp)
+    if (isVscode()) {
+        Send(keyMap.ctrl . keyMap.onlyPageUp)
+    } else {
+        Send(keyMap.ctrl . keyMap.shift . keyMap.onlyTab)
+    }
 }
 ; 向右
 *d:: {
-    Send(keyMap.ctrl . keyMap.onlyPageDown)
+    ; FIXME: google 考虑一下
+    if (isVscode()) {
+        Send(keyMap.ctrl . keyMap.onlyPageDown)
+    } else {
+        Send(keyMap.ctrl . keyMap.onlyTab)
+    }
 }
 
 ; 关闭标签页 另一个快捷键是 alt + q
@@ -65,15 +74,11 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 ; 前进
 *z:: {
-    if (isBrowser() || isVscode()) {
-        Send(keyMap.alt . keyMap.onlyRight)
-    }
+    Send(keyMap.alt . keyMap.onlyRight)
 }
 ; 后退
 *x:: {
-    if (isBrowser() || isVscode()) {
-        Send(keyMap.alt . keyMap.onlyLeft)
-    }
+    Send(keyMap.alt . keyMap.onlyLeft)
 }
 
 ; vscode 切换分栏
@@ -98,5 +103,13 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 向右
 *f:: {
     Send(keyMap.ctrl . keyMap.win . keyMap.onlyRight)
+}
+; 删除当前桌面
+*a:: {
+    Send(keyMap.ctrl . keyMap.win . "{F4}")
+}
+; 新增桌面
+*g:: {
+    Send(keyMap.ctrl . keyMap.win . "d")
 }
 #HotIf
