@@ -151,4 +151,7 @@ mode_tab := useMode("Tab", keyMap.onlyTab)
 */:: {
     Send(keyMap.ctrl . keyMap.alt . "/")
 }
+*Space:: {
+    Send(keyMap.ctrl . keyMap.alt . keyMap.Space)
+}
 #HotIf
