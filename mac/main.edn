@@ -17,7 +17,11 @@
 ;; ## | optional any
 
 ;; 通过 osascript -e 'id of app "AppName"' 命令获得 app 的标识
-{:applications {:browser ["^org\\.mozilla\\.firefox$" "^com\\.google\\.Chrome$" "^com\\.microsoft\\.edgemac$" "^com\\.apple\\.Safari$"]
+{:applications {:browser ["^org\\.mozilla\\.firefox$"
+                          "^com\\.google\\.Chrome$"
+                          "^com\\.microsoft\\.edgemac$"
+                          "^com\\.apple\\.Safari$"
+                          "^notion\\.id"]
                 :vscode ["^com\\.microsoft\\.VSCode$"]}
  :main [
         ;; 每个模块单独一行才能被脚本解析到
