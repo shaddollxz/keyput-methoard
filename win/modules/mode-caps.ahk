@@ -112,4 +112,13 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *g:: {
     Send(keyMap.ctrl . keyMap.win . "d")
 }
+; 显示桌面
+*LAlt:: {
+    Send(keyMap.win . "d")
+}
+
+; 截屏
+*`:: {
+    Send(keyMap.win . keyMap.shift . "s")
+}
 #HotIf

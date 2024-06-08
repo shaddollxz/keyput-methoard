@@ -24,4 +24,7 @@ mode_quote := useMode("'")
 *Space:: {
     Send("\")
 }
+*g:: {
+    Send("->")
+}
 #HotIf
