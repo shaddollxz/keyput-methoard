@@ -18,12 +18,12 @@ RAlt::RCtrl
     }
 }
 
-; ctrl + space 打开搜索
-<^Space:: {
+; win + space 打开搜索
+<#Space:: {
     Send(keyMap.win . "s")
 }
 
-; ctrl + 左键 右键
+; win + 左键 右键
 <#LButton:: {
     Click("Right")
 }
