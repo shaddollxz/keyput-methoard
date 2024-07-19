@@ -6,5 +6,5 @@
          [:r :!Rperiod ["quote_mode" 1]] ;; >
          [:t :!Rperiod ["quote_mode" 1]] ;; >
          [:spacebar :backslash ["quote_mode" 1]] ;; 转义符 \\
-         [:g [:!Rhyphen :!Rperiod] ["semi_mode" 1]] ;; =>
+         [:g [:hyphen :!Rperiod] ["quote_mode" 1]] ;; ->
          ]}
