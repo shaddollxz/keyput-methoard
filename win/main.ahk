@@ -1,5 +1,5 @@
 #Include "./configs/config.ahk"
-
+#Include "./configs/menu.ahk"
 
 #Include "./modules/mode-3.ahk"
 #Include "./modules/mode-9.ahk"

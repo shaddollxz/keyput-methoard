@@ -6,7 +6,11 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
 *CapsLock:: {
     mode_caps.openMode()
-    Send("{Alt Up}")
+    Send("{Alt Up}") ; Caps + Space 时使用的操作
+
+    if (EnvGet("Lock_Caps_Lower")) {
+        SetCapsLockState("Off")
+    }
 }
 
 #HotIf mode_caps.isOpenMode
