@@ -34,8 +34,7 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 }
 
 *Space:: {
-    Send("{Alt Down}")
-    Send(keyMap.onlyTab)
+    Send(keyMap.enter)
 }
 
 ; 浏览器或者代码编辑器中，切换标签页
