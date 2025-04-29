@@ -107,14 +107,6 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *f:: {
     Send(keyMap.ctrl . keyMap.win . keyMap.onlyRight)
 }
-; 删除当前桌面
-*a:: {
-    Send(keyMap.ctrl . keyMap.win . "{F4}")
-}
-; 新增桌面
-*g:: {
-    Send(keyMap.ctrl . keyMap.win . "d")
-}
 ; 显示桌面
 *LAlt:: {
     Send(keyMap.win . "d")
@@ -123,5 +115,9 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 ; 截屏
 *`:: {
     Send(keyMap.win . keyMap.shift . "s")
+}
+; 移动应用到下一个屏幕
+*r:: {
+    Send(keyMap.win . keyMap.shift . keyMap.onlyRight)
 }
 #HotIf
