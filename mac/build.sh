@@ -1,5 +1,6 @@
 #!/bin/bash
 
+temp="temp.edn"
 output="karabiner.edn"
 input="main.edn"
 
@@ -10,21 +11,21 @@ rm $output
 getFileData() {
     local path=$1
 
-    data=""
-
     while IFS= read line; do
         if [[ $line =~ \.edn\"$ ]]; then
-            data="${data}$(getFileData $(echo $line | sed 's/"//g'))"
+            getFileData $(echo $line | sed 's/"//g')
+        elif [[ $line =~ \.sh\"$ ]]; then
+            IFS=" " read -r key path <<<"$line"
+            echo "${key} \"" >>$temp
+            cat $(echo $path | sed 's/"//g') | sed 's/# .*//' | sed 's/[\"]/\\&/g' | tr '\n' " " >>$temp
+            echo '"' >>$temp
         else
-            data="${data}$(echo $line | sed "s/;.*//")"
+            echo $line | sed 's/;.*//' | sed 's/\\/\\\\/g' >>$temp
         fi
     done <$path
-
-    data="${data}${line}"
-    echo $data
 }
 
-data=$(getFileData $input)
+getFileData $input
 
-# 转换后的 edn 文件中 显示一个 \ 需要转换为 \\ 在脚本中为 \\\\
-echo $data | sed 's/\\/\\\\/g' >>$output
+cat $temp | tr '\n' ' ' | tr -s ' ' >$output
+rm $temp
