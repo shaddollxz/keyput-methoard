@@ -1,9 +1,15 @@
+#!/bin/bash
+
 # 获得当前屏幕数据（处理成数组，数组顺序就是设置的屏幕顺序）
 # 屏幕大小优先使用 “UI Looks like” 中的像素，如果没有则使用 Resolution(如果带有 Retina 需要把像素缩为一半)
 displayWidths=();
 i=0;
 
-displayInfo=$(system_profiler SPDisplaysDataType | grep -E "Resolution|UI Looks like");
+if [ -f "$HOME/.cache/screen_info_cache" ]; then
+  displayInfo=$(cat "$HOME/.cache/screen_info_cache" | grep -E "Resolution|UI Looks like")
+else
+  displayInfo=$(system_profiler SPDisplaysDataType | grep -E "Resolution|UI Looks like");
+fi
 
 while IFS= read line; do
   # 分割 key 和 value
@@ -28,7 +34,6 @@ done <<< "$displayInfo";
 
 # 如果只有一个屏幕，不继续执行
 displayCount=${#displayWidths[@]};
-
 if (($displayCount < 2)); then
     exit 0;
 fi;
@@ -52,7 +57,7 @@ if [ $isFullscreen == true ]; then
   echo '
 tell application "System Events" \n
   keystroke "f" using {control down, command down} \n
-  delay 0.4 \n
+  delay 0.5 \n
 end tell' | osascript;
 fi;
 
@@ -113,8 +118,3 @@ tell application \"System Events\" \n
     set position of front window to {$newPositionX, $windowY} \n
   end tell \n
 end tell" | osascript;
-
-echo "
-tell application \"$frontApp\" to activate \n
-delay 0.3 \n
-tell application \"$frontApp\" to activate" | osascript;

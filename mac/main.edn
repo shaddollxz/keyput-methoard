@@ -27,7 +27,7 @@
  }
  ;; 使用 trans 作为命令行翻译工具
  :templates {
-    :moveApp "./scripts/move.sh"
+    :moveApp "keyput-methoard-scripts/move-app.sh"
  }
 
  :main [

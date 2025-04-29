@@ -3,9 +3,11 @@
 temp="temp.edn"
 output="karabiner.edn"
 input="main.edn"
+zip="keyput-methoard.zip"
 
 cd $(dirname $0)
 
+rm $zip
 rm $output
 
 getFileData() {
@@ -16,9 +18,7 @@ getFileData() {
             getFileData $(echo $line | sed 's/"//g')
         elif [[ $line =~ \.sh\"$ ]]; then
             IFS=" " read -r key path <<<"$line"
-            echo "${key} \"" >>$temp
-            cat $(echo $path | sed 's/"//g') | sed 's/# .*//' | sed 's/[\"]/\\&/g' | tr '\n' " " >>$temp
-            echo '"' >>$temp
+            echo "${key} \"sh ~/.config/$(echo $path | sed 's/"//g')\"" >>$temp
         else
             echo $line | sed 's/;.*//' | sed 's/\\/\\\\/g' >>$temp
         fi
@@ -29,3 +29,5 @@ getFileData $input
 
 cat $temp | tr '\n' ' ' | tr -s ' ' >$output
 rm $temp
+
+7z a $zip $output com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist keyput-methoard-scripts/*.sh
