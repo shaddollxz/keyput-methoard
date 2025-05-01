@@ -3,7 +3,7 @@
 temp="temp.edn"
 output="karabiner.edn"
 input="main.edn"
-zip="keyput-methoard.zip"
+zip="keyput-methoard-mac.zip"
 
 cd $(dirname $0)
 
@@ -30,4 +30,4 @@ getFileData $input
 cat $temp | tr '\n' ' ' | tr -s ' ' >$output
 rm $temp
 
-7z a $zip $output com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist keyput-methoard-scripts/*.sh
+7z a $zip $output com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist install.sh keyput-methoard-scripts/*.sh

@@ -39,5 +39,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: mac/karabiner.edn
+          files: mac/keyput-methoard-mac.zip
           token: ${{ secrets.GITHUB_TOKEN }}
