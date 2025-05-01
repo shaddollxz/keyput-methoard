@@ -2,47 +2,50 @@
 
 自定义键盘映射，灵感来源于 [myKeyMap](https://github.com/xianyukang/MyKeymap)，根据自己的需求重写的一套配置
 
-## win
+## windows
 
-### 使用
+> [!IMPORTANT]
+> 注意：windows 下使用了 [AutoHotKey](https://www.autohotkey.com) 实现键位映射，某些游戏可能会把本软件视为外挂脚本，注意在该情况下将本软件关闭再进行游戏
 
-在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中选择 exe 文件下载
+### 下载及使用
 
-或者拉下代码，在本地使用 `powershell` 运行 `win/build/build.ps1` 脚本进行编译
-
-如果需要修改键位，可以 fork 下本仓库，自己进行修改，[AHK 官网](https://www.autohotkey.com) 中可以找到脚本语法说明和调试方法
+在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 **Keyput-Methoard.exe** 直接运行即可
 
 ### 开机自启动
 
-把 exe 文件放到 `C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下即可
+把 exe 文件放到 `C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 下
+
+### 修改配置并编译
+
+如果需要修改键位，可以 fork 下本仓库，自己进行修改 modules 下的映射并通过 `win/build/build.ps1` 编译，[AHK 官网](https://www.autohotkey.com) 中可以找到脚本语法说明和调试方法
 
 ## mac
 
-mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置按键，这里提供了 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master) 的配置
+mac 上使用 [karabiner](https://karabiner-elements.pqrs.org/) 来映射按键，这里使用了 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master) 生成配置
 
-> goku 可以用更简洁的语法生成 karabiner 的配置文件
+### 下载及使用
 
-### 使用
+1. 下载 [karabiner](https://karabiner-elements.pqrs.org/) 和 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
 
-- 下载 [karabiner](https://karabiner-elements.pqrs.org/) 和 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
+2. 在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 **keyput-methoard-mac.zip**
 
-- 在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 karabiner.edn
+3. 解压下载的 zip 并执行其中的 install.sh
+    - 会在 ~/.config 目录中新增 `karabiner.edn` 和 `keyput-methoard-scripts`
+    - 会在 ~/Library/LaunchAgents 中新增 `com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist` 并注册为后台程序
 
-- 或者拉下代码，在本地使用 `bash` 运行 mac 文件夹下的 `build.sh` 脚本来生成 `karabiner.edn`
+### 修改配置并编译
 
-- 把 `karabiner.edn` 复制到 `~/.config` 下
-
-- 命令行执行命令 `goku`
-
-同样的，如果需要修改键位，可以看看[goku 的配置文档](https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md)自己修改
+同样的，如果需要修改键位，可以看看[goku 的配置文档](https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md)自己修改 modules 下的配置并通过 `mac/build.sh` 生成压缩包
 
 ## 键位替换说明
 
-为了在 `win` 和 `mac` 下手感相同，这里额外做了一些键位修改
+新增的键位主要分为 `9模式` `3模式` `分号模式` `caps模式` `tab模式`
 
-### win
+同时为了在 `windows` 和 `mac` 下手感相同，这里额外做了一些键位修改
 
-- 把 `右alt` 和 `右ctrl` 进行了替换，和 `mac` 的键位保持一致
+### windows
+
+- 把 `右 alt` 和 `右 ctrl` 进行了替换，和 `mac` 的键位保持一致
 - `左ctrl + q` 会关闭当前窗口
 - `左ctrl + h` 会隐藏当前窗口
 - `win + space` 会触发 windows 的焦距搜索
@@ -57,10 +60,6 @@ mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置�
 | key_code::fn | left_command |
 | left_command | left_option  |
 | left_option  | key_code::fn |
-
-## 键位说明
-
-主要分为 `9模式` `3模式` `分号模式` `caps模式` `tab模式`
 
 ### 9 模式
 
@@ -87,9 +86,6 @@ mac 上推荐使用 [karabiner](https://karabiner-elements.pqrs.org/) 来设置�
 ### Caps 模式
 
 主要拿来做页面切换，浏览器快捷键等和输入没关系的事
-
-> `caps + a / caps + g` 只会在 windows 上运行，mac 上没有对应功能的快捷键
-> `caps + j / caps + l` 只会在 vscode 上运行
 
 ![mode_caps](/keyboard-map/mode_caps.png)
 
