@@ -10,6 +10,7 @@
          [:f :!Tright_arrow ["caps_mode" 1]]
          [:s :!Tleft_arrow ["caps_mode" 1]]
          [:spacebar :return_or_enter ["caps_mode" 1]]
+         [:r [:moveApp] ["caps_mode" 1]]
          [:tab :mission_control ["caps_mode" 1]]
          ;; 浏览器中的场景
          [:v :!Cr [:browser ["caps_mode" 1]]] ;; 刷新浏览器
