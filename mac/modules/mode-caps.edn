@@ -3,7 +3,6 @@
                                           :alone :caps_lock}]
          [:q :!WQf ["caps_mode" 1]] ;; 全屏切换
          [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
-         [:left_option :!Cmission_control ["caps_mode" 1]] ;; 显示桌面
          ;; command + shift + 5 更多截图功能
          [:grave_accent_and_tilde :!CS4 ["caps_mode" 1]] ;; 滑动矩形截图
          ;; 桌面左右移动
@@ -19,8 +18,6 @@
          ;; vscode 中的场景
          [:x :!Thyphen [:vscode ["caps_mode" 1]]] ;; 返回 ctrl + -
          [:z :!SThyphen [:vscode ["caps_mode" 1]]] ;; 前进 shift + ctrl + -
-         [:j [:!Ck :!Cleft_arrow] [:vscode ["caps_mode" 1]]] ;; 分栏切换到左侧
-         [:l [:!Ck :!Cright_arrow] [:vscode ["caps_mode" 1]]] ;; 分栏切换到右侧
          ;; 有标签页的场景
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
          [:b :!CSt ["caps_mode" 1]] ;; 重新打开标签页

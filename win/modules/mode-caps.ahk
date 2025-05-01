@@ -107,10 +107,6 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *f:: {
     Send(keyMap.ctrl . keyMap.win . keyMap.onlyRight)
 }
-; 显示桌面
-*LAlt:: {
-    Send(keyMap.win . "d")
-}
 
 ; 截屏
 *`:: {
