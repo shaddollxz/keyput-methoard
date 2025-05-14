@@ -4,16 +4,9 @@ if [ $(which goku) == "goku no found" ]; then
     exit
 fi
 
-launchctl unload "$HOME"/Library/LaunchAgents/com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist
-cp com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist "$HOME"/Library/LaunchAgents
-chmod 644 "$HOME"/Library/LaunchAgents/com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist
-launchctl load "$HOME"/Library/LaunchAgents/com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist
-
 cp karabiner.edn "$HOME"/.config
 rm -rf "$HOME"/.config/keyput-methoard-scripts
-cp -r keyput-methoard-scripts "$HOME/.config"
-chmod +x "$HOME"/.config/keyput-methoard-scripts/*.sh
+cp -r keyput-methoard-scripts "$HOME"/.config
+chmod +x "$HOME"/.config/keyput-methoard-scripts/*
 
 goku
-
-open https://github.com/shaddollxz/keyput-methoard

@@ -1,3 +1,6 @@
 karabiner.edn
 Keyput-Methoard.exe
 keyput-methoard-mac.zip
+.build
+.swiftpm
+mac/keyput-methoard-scripts
