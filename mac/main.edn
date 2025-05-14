@@ -27,7 +27,7 @@
  }
  ;; 使用 trans 作为命令行翻译工具
  :templates {
-    :moveApp "sh ~/.config/keyput-methoard-scripts/move-app.sh"
+    :moveApp "~/.config/keyput-methoard-scripts/move-app"
     :moveMouseToNextScreen "~/.config/keyput-methoard-scripts/move-mouse-to-next-screen"
     :moveMouseToLastScreen "~/.config/keyput-methoard-scripts/move-mouse-to-last-screen"
  }

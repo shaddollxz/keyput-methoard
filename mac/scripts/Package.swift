@@ -7,27 +7,35 @@ let package = Package(
     products: [
         .executable(name: "move-mouse-to-last-screen", targets: ["LastScreen"]),
         .executable(name: "move-mouse-to-next-screen", targets: ["NextScreen"]),
-        .library(name: "MouseUtils", targets: ["MouseUtils"]),
+        .executable(name: "move-app", targets: ["MoveApp"]),
+        .library(name: "Utils", targets: ["Utils"]),
     ],
     targets: [
         .target(
-            name: "MouseUtils",
+            name: "Utils",
             path: "src/utils",
         ),
 
         .executableTarget(
-            name: "LastScreen",
-            dependencies: ["MouseUtils"],
+            name: "MoveApp",
+            dependencies: ["Utils"],
             path: "src/targets",
-            exclude: ["move-mouse-to-next-screen.swift"],
-            sources: ["move-mouse-to-last-screen.swift"],
+            exclude: ["move-mouse-to-next-screen.swift", "move-mouse-to-last-screen.swift"],
+            sources: ["move-app.swift"]
         ),
 
         .executableTarget(
-            name: "NextScreen",
-            dependencies: ["MouseUtils"],
+            name: "LastScreen",
+            dependencies: ["Utils"],
             path: "src/targets",
-            exclude: ["move-mouse-to-last-screen.swift"],
+            exclude: ["move-mouse-to-next-screen.swift", "move-app.swift"],
+            sources: ["move-mouse-to-last-screen.swift"],
+        ),
+        .executableTarget(
+            name: "NextScreen",
+            dependencies: ["Utils"],
+            path: "src/targets",
+            exclude: ["move-mouse-to-last-screen.swift", "move-app.swift"],
             sources: ["move-mouse-to-next-screen.swift"],
         ),
     ]

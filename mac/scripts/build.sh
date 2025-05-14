@@ -8,4 +8,4 @@ mkdir "../keyput-methoard-scripts"
 
 cp .build/arm64-apple-macosx/release/move-mouse-to-last-screen ../keyput-methoard-scripts
 cp .build/arm64-apple-macosx/release/move-mouse-to-next-screen ../keyput-methoard-scripts
-cp ./move-app.sh ../keyput-methoard-scripts
+cp .build/arm64-apple-macosx/release/move-app ../keyput-methoard-scripts

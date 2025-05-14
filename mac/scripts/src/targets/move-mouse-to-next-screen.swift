@@ -1,5 +1,10 @@
+import Cocoa
 import Foundation
-import MouseUtils
+import Utils
+
+if NSScreen.screens.count < 2 {
+    exit(0)
+}
 
 let result = moveMouseToRelativeScreen(screenNumber: 1).flatMap { screen in
     focusScreenTopApp(screen)

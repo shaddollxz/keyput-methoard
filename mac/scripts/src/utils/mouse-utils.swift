@@ -1,6 +1,6 @@
 import Cocoa
 
-public enum MyErrors: Error, LocalizedError {
+public enum MouseErrors: Error, LocalizedError {
     case noNextScreen
     case cantGetWindowInfos
     case cantGetMousePointApp
@@ -20,7 +20,7 @@ public enum MyErrors: Error, LocalizedError {
     }
 }
 
-public func moveMouseToRelativeScreen(screenNumber: Int) -> Result<NSRect, MyErrors> {
+public func moveMouseToRelativeScreen(screenNumber: Int) -> Result<NSRect, MouseErrors> {
     // 1.获得所有屏幕大小信息和鼠标位置信息
     let screens: [NSRect] = NSScreen.screens.map { $0.frame }
     let mouse: NSPoint = NSEvent.mouseLocation
@@ -32,13 +32,13 @@ public func moveMouseToRelativeScreen(screenNumber: Int) -> Result<NSRect, MyErr
             return screen.contains(mouse)
         })
     else {
-        return .failure(MyErrors.cantGetCurrentScreenIndex)
+        return .failure(MouseErrors.cantGetCurrentScreenIndex)
     }
 
     let nextScreenIndex = currentScreenIndex + screenNumber
 
     if nextScreenIndex < 0 || nextScreenIndex > screens.endIndex {
-        return .failure(MyErrors.noNextScreen)
+        return .failure(MouseErrors.noNextScreen)
     }
 
     // 3.计算鼠标移动后的位置
@@ -64,12 +64,12 @@ public func moveMouseToRelativeScreen(screenNumber: Int) -> Result<NSRect, MyErr
     return .success(nextScreen)
 }
 
-public func focusScreenTopApp(_ screen: NSRect) -> Result<Void, MyErrors> {
+public func focusScreenTopApp(_ screen: NSRect) -> Result<Void, MouseErrors> {
     // 获取窗口列表（仅屏幕上可见的窗口）
     let options = CGWindowListOption(arrayLiteral: .optionOnScreenOnly, .excludeDesktopElements)
     guard
         let windowInfos = CGWindowListCopyWindowInfo(options, kCGNullWindowID) as? [[String: Any]]
-    else { return .failure(MyErrors.cantGetWindowInfos) }
+    else { return .failure(MouseErrors.cantGetWindowInfos) }
 
     var pointAppPid: pid_t? = nil
     for info in windowInfos {
@@ -88,7 +88,13 @@ public func focusScreenTopApp(_ screen: NSRect) -> Result<Void, MyErrors> {
             height: windowBounds["Height"]!
         )
 
-        if layer == 0 && screen.contains(windowRect) {
+        print("info: \(info)")
+
+        if layer == 0
+            // 有些应用全屏模式下 y 轴坐标比屏幕的还要大，这里优先判断大小匹配上
+            && ((screen.width == windowRect.width && screen.height == windowRect.height)
+                || screen.contains(windowRect))
+        {
             pointAppPid = appPid
             break
         }
@@ -98,7 +104,7 @@ public func focusScreenTopApp(_ screen: NSRect) -> Result<Void, MyErrors> {
     guard
         let pid: pid_t = pointAppPid,
         let app: NSRunningApplication = NSRunningApplication(processIdentifier: pid)
-    else { return .failure(MyErrors.cantGetMousePointApp) }
+    else { return .failure(MouseErrors.cantGetMousePointApp) }
 
     app.activate()
 
