@@ -1,6 +1,8 @@
 #Include "../configs/key-map.ahk"
 #Include "../utils/use-mode.ahk"
 #Include "../utils/assert.ahk"
+#Include "../utils/move-mouse.ahk"
+#Include "../utils/focus-top-window.ahk"
 
 mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 
@@ -112,8 +114,21 @@ mode_caps := useMode("CapsLock", keyMap.onlyCaps)
 *`:: {
     Send(keyMap.win . keyMap.shift . "s")
 }
+
 ; 移动应用到下一个屏幕
 *r:: {
     Send(keyMap.win . keyMap.shift . keyMap.onlyRight)
+}
+*g:: {
+    toScreen := moveMouse(1)
+    if toScreen {
+        focusTopWindow(toScreen)
+    }
+}
+*a:: {
+    toScreen := moveMouse(-1)
+    if toScreen {
+        focusTopWindow(toScreen)
+    }
 }
 #HotIf
