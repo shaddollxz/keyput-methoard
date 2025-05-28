@@ -1,94 +1,28 @@
 {
     "configurations": [
         {
-            "type": "swift",
+            "name": "debug current file",
+            "type": "autohotkey",
             "request": "launch",
+            "runtime": "${workspaceFolder}/win/build/AutoHotkey64.exe",
+            "program": "${file}",
             "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts",
-            "name": "Debug move-mouse-to-last-screen (mac/keyput-methoard-scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts/.build/debug/move-mouse-to-last-screen",
-            "preLaunchTask": "swift: Build Debug move-mouse-to-last-screen (mac/keyput-methoard-scripts)"
+            "port": "9002-9010",
+            "variableCategories": "recommend",
+            "useDebugDirective": true,
+            "useAutoJumpToError": true
         },
         {
-            "type": "swift",
+            "name": "debug main program",
+            "type": "autohotkey",
             "request": "launch",
+            "runtime": "${workspaceFolder}/win/build/AutoHotkey64.exe",
+            "program": "${workspaceFolder}/win/main.ahk",
             "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts",
-            "name": "Release move-mouse-to-last-screen (mac/keyput-methoard-scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts/.build/release/move-mouse-to-last-screen",
-            "preLaunchTask": "swift: Build Release move-mouse-to-last-screen (mac/keyput-methoard-scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts",
-            "name": "Debug move-mouse-to-next-screen (mac/keyput-methoard-scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts/.build/debug/move-mouse-to-next-screen",
-            "preLaunchTask": "swift: Build Debug move-mouse-to-next-screen (mac/keyput-methoard-scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts",
-            "name": "Release move-mouse-to-next-screen (mac/keyput-methoard-scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/keyput-methoard-scripts/.build/release/move-mouse-to-next-screen",
-            "preLaunchTask": "swift: Build Release move-mouse-to-next-screen (mac/keyput-methoard-scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Debug move-mouse-to-last-screen (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/debug/move-mouse-to-last-screen",
-            "preLaunchTask": "swift: Build Debug move-mouse-to-last-screen (mac/scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Release move-mouse-to-last-screen (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/release/move-mouse-to-last-screen",
-            "preLaunchTask": "swift: Build Release move-mouse-to-last-screen (mac/scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Debug move-mouse-to-next-screen (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/debug/move-mouse-to-next-screen",
-            "preLaunchTask": "swift: Build Debug move-mouse-to-next-screen (mac/scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Release move-mouse-to-next-screen (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/release/move-mouse-to-next-screen",
-            "preLaunchTask": "swift: Build Release move-mouse-to-next-screen (mac/scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Debug move-app (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/debug/move-app",
-            "preLaunchTask": "swift: Build Debug move-app (mac/scripts)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:keyput-methoard}/mac/scripts",
-            "name": "Release move-app (mac/scripts)",
-            "program": "${workspaceFolder:keyput-methoard}/mac/scripts/.build/release/move-app",
-            "preLaunchTask": "swift: Build Release move-app (mac/scripts)"
+            "port": "9002-9010",
+            "variableCategories": "recommend",
+            "useDebugDirective": true,
+            "useAutoJumpToError": true
         }
     ]
 }
