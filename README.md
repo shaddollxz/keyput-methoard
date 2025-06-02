@@ -9,7 +9,7 @@
 
 ### 下载及使用
 
-在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 **Keyput-Methoard.exe** 直接运行即可
+在 [release](https://github.com/shaddollxz/keyput-methoard/releases/latest) 中下载 **Keyput-Methoard.exe** 直接运行即可
 
 ### 开机自启动
 
@@ -27,11 +27,10 @@ mac 上使用 [karabiner](https://karabiner-elements.pqrs.org/) 来映射按键�
 
 1. 下载 [karabiner](https://karabiner-elements.pqrs.org/) 和 [goku](https://github.com/yqrashawn/GokuRakuJoudo/tree/master)
 
-2. 在 [release](https://github.com/shaddollxz/keyput-methoard/blob/main/releases) 中下载 **keyput-methoard-mac.zip**
+2. 在 [release](https://github.com/shaddollxz/keyput-methoard/releases/latest) 中下载 **keyput-methoard-mac.zip**
 
 3. 解压下载的 zip 并执行其中的 install.sh
     - 会在 ~/.config 目录中新增 `karabiner.edn` 和 `keyput-methoard-scripts`
-    - 会在 ~/Library/LaunchAgents 中新增 `com.github.shaddollxz.keyput-methoard.screen-info-cache-updater.plist` 并注册为后台程序
 
 ### 修改配置并编译
 
