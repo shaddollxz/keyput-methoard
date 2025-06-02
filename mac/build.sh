@@ -5,12 +5,12 @@ output="karabiner.edn"
 input="main.edn"
 zip="keyput-methoard-mac.zip"
 
-pwd=$(pwd)
+pwd=$(dirname $0)
 
 cd "$pwd/scripts"
 sh build.sh
 
-cd "$pwd"
+cd ..
 
 rm $zip
 rm $output
