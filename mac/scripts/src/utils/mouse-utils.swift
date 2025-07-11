@@ -88,8 +88,6 @@ public func focusScreenTopApp(_ screen: NSRect) -> Result<Void, MouseErrors> {
             height: windowBounds["Height"]!
         )
 
-        print("info: \(info)")
-
         if layer == 0
             // 有些应用全屏模式下 y 轴坐标比屏幕的还要大，这里优先判断大小匹配上
             && ((screen.width == windowRect.width && screen.height == windowRect.height)
