@@ -1,6 +1,8 @@
 {:des "Caps模式"
  :rules [[:caps_lock ["caps_mode" 1] nil {:afterup ["caps_mode" 0]
                                           :alone :caps_lock}]
+         [:spacebar ["caps_mode_sub_space" 1] [["caps_mode_sub_space" 0] ["caps_mode" 1]] {:afterup ["caps_mode_sub_space" 0] :alone nil}]
+
          [:q :!WQf ["caps_mode" 1]] ;; 全屏切换
          [:w :!QEi ["caps_mode" 1]] ;; 打开网页开发者模块
          ;; command + shift + 5 更多截图功能
@@ -17,6 +19,13 @@
          ;; vscode 中的场景
          [:x :!Thyphen [:vscode ["caps_mode" 1]]] ;; 返回 ctrl + -
          [:z :!SThyphen [:vscode ["caps_mode" 1]]] ;; 前进 shift + ctrl + -
+         ;; wps 中的场景
+         [:t :!Cn [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]] ;; 新建文档
+         [:t :!SFf11 [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]] ;; 新建表
+         [:e :!Ttab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]] ;; 切换 tab
+         [:d :!TStab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]]
+         [:e :!COclose_bracket [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]]
+         [:d :!COopen_bracket [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]] ;; 切换 excel 子表
          ;; 有标签页的场景
          [:c :!Cw ["caps_mode" 1]] ;; 关闭标签页
          [:b :!CSt ["caps_mode" 1]] ;; 重新打开标签页

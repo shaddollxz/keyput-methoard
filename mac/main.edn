@@ -24,6 +24,7 @@
               "^com\\.apple\\.Safari$"
               "^notion\\.id"]
     :vscode ["^com\\.microsoft\\.VSCode$"]
+    :wps ["^com\\.kingsoft\\.wpsoffice.mac$"]
  }
  ;; 使用 trans 作为命令行翻译工具
  :templates {
