@@ -22,8 +22,8 @@
          ;; wps 中的场景
          [:t :!Cn [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]] ;; 新建文档
          [:t :!SFf11 [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]] ;; 新建表
-         [:e :!Ttab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]] ;; 切换 tab
-         [:d :!TStab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]]
+         [:e :!TStab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]] ;; 切换 tab
+         [:d :!Ttab [:wps ["caps_mode" 1] ["caps_mode_sub_space" 0]]]
          [:e :!COclose_bracket [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]]
          [:d :!COopen_bracket [:wps ["caps_mode" 1] ["caps_mode_sub_space" 1]]] ;; 切换 excel 子表
          ;; 有标签页的场景
